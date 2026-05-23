@@ -86,7 +86,8 @@ h3{
 /* BUTTONS */
 
 .primary-btn,
-.secondary-btn{
+.secondary-btn,
+.third-btn{
 
     display:inline-block;
 
@@ -113,6 +114,12 @@ h3{
 
     color:#1F1F1B;
 }
+
+.third-btn{
+    background: #C9895B;
+    color:black;
+}
+
 
 
 /* INTRO */
