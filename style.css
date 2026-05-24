@@ -1,14 +1,18 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {                             /* alle elementer */
+    margin: 0;                  /* nulstiller browser-defaults - fx h1 og p har ellers margin */
+    padding: 0;                 /* nulstiller browser-defaults */
+    box-sizing: border-box;     /* ændrer box-modellen, så width inkluderer padding og border --> gør layout forudsigelige. Konsekvens = man skal selv definere al spacing
+                                men gør jeg også*/
 }
 
 body{
-    font-family:'Manrope', sans-serif;
-    background:#F5F1EA;
-    color:#1F1F1B;
+    background:#F5EFE6;
+    color:#000000;
     line-height:1.6;
+}
+
+p{
+    font-family:'Manrope', sans-serif;
 }
 
 img{
