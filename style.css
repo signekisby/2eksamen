@@ -23,7 +23,7 @@ h3{
 }
 
 
-/* HERO */
+/* HERO - SEKTION */
 
 .hero{
 
@@ -128,7 +128,7 @@ h3{
 
 
 
-/* INTRO */
+/* INTRO TEKST - SEKTION */
 
 .intro{
 
@@ -152,9 +152,7 @@ h3{
 }
 
 
-/* FORSKELLIGE EVENTS */
-
-/* FEATURED EVENT */
+/*FREMHÆVET EVENT SUNSET NIGHT - SEKTION */
 
 .featured-event{
 
@@ -416,24 +414,45 @@ h3{
 }
 
 
-
-
-/* GALLERY */
+/*LILLE GALLERI MED 3 BILLEDER*/
 
 .gallery{
 
-    padding:0 40px 140px;
+    padding:120px 40px;
 }
 
-.gallery-large img{
+.gallery-top img{
 
-    height:550px;
+    width:100%;
+
+    height:500px;
 
     object-fit:cover;
 
-    border-radius:32px;
+    border-radius:28px;
 }
 
+.gallery-bottom{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:24px;
+
+    margin-top:24px;
+}
+
+.gallery-bottom img{
+
+    width:100%;
+
+    height:320px;
+
+    object-fit:cover;
+
+    border-radius:28px;
+}
 
 /* CTA */
 
