@@ -14,8 +14,6 @@ p{
     font-family:'Manrope', sans-serif;
     font-size:20px;
     font-weight: 400;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 
 img{
@@ -212,13 +210,13 @@ h3{
 
 /* MERE END BARE MINIGOLF */
 
-h1{
+.index-section1 h1{
     margin-top: 200px;
     margin-left: 100px;
     margin-right: 100px;
 }
 
-p{
+.index-section1 p{
     margin-left: 100px;
     margin-right: 100px;
 }
