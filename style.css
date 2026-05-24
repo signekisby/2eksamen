@@ -8,7 +8,6 @@
 body{
     background:#F5EFE6;
     color:#000000;
-    line-height:1.6;
 }
 
 p{
@@ -42,7 +41,7 @@ h3{
 /* HEADER */
 .header {
     background-color: #AFC3A2;
-    height: 120px;
+    height: 110px;
 
     display: flex;
     justify-content: space-between;
@@ -61,7 +60,7 @@ h3{
 /* NAVIGATION */
 .nav-links {
     display: flex;
-    gap: 60px;
+    gap: 50px;
 
     list-style: none;
     margin: 0;
@@ -100,8 +99,10 @@ h3{
     position: relative;
     width: 100%;
     height: 80vh;
-    overflow: hidden;
+    overflow: visible;
 }
+
+/* VIDEO */
 
 .hero-video video {
     width: 100%;
@@ -110,39 +111,92 @@ h3{
     display: block;
 }
 
-/* Mørkt overlay over videoen */
+/* MØRKT OVERLAY */
 
 .hero-video::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(0, 0, 0, 0.30);
     z-index: 1;
 }
 
-/* Tekst ovenpå video */
+/* TERRACOTTA STREG I BUNDEN */
+
+.hero-video::after {            /* Opretter et usynligt element efter indholdet i .hero-video */
+    content: "";                /* Pseudo-elementer virker kun hvis de har content. Her er indholdet tomt (""),
+                                fordi vi bare vil bruge elementet som en farvet bjælke. */
+    position: absolute;         /* Gør at elementet kan placeres præcist inde i .hero-video. Det virker fordi man har:
+                                .hero-video {position: relative;}
+                                Så bliver .hero-video referencepunktet */
+    left: 0;                    /* Starter helt ude ved venstre kant */
+    bottom: 0;                  /* Placerer elementet helt nede i bunden af .hero-video */
+
+    width: 100%;
+    height: 12px;
+
+    background-color: #C9895B;
+    z-index: 3;
+}
+
+/* TEKST PÅ VIDEO */
 
 .hero-text {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 45%;               /* Hvor langt fra toppen. 50% ville være midt på videoen */
+    left: 50%;              /* Så den er centreret midt på skærmen */
     transform: translate(-50%, -50%);
 
     text-align: center;
     color: white;
     z-index: 2;
+
+    max-width: 900px;
+    width: 90%;
 }
 
 .hero-text h1 {
-    font-family: 'Manrope', sans-serif;
-    font-size: 3rem;
-    margin-bottom: 15px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
 }
 
 .hero-text p {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.6rem;
+    line-height: 1.4;
 }
+
+/* CTA KNAPPER */
+
+.hero-cta {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 80px;
+
+    z-index: 10;
+}
+
+.cta-btn {
+    background-color: #C9895B;
+    color: black;
+
+    text-decoration: none;
+
+    padding: 15px 60px;
+
+    border-radius: 50px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
 
 
 
