@@ -5,7 +5,7 @@
 }
 
 body{
-    font-family:'Montserrat', sans-serif;
+    font-family:'Manrope', sans-serif;
     background:#F5F1EA;
     color:#1F1F1B;
     line-height:1.6;
@@ -16,10 +16,15 @@ img{
     display:block;
 }
 
-h1,
+h1{
+    font-family:'DM Serif Display', serif;
+
+    font-weight:550;
+}
+
 h2,
 h3{
-    font-family:'Cormorant Garamond', serif;
+    font-family:'DM Serif Display', serif;
 }
 
 
@@ -106,7 +111,7 @@ h3{
 
 .primary-btn{
 
-    background: #afc3a2;
+    background: #AFC3A2;
     color:black;
 }
 
@@ -156,7 +161,7 @@ h3{
 
 .featured-event{
 
-    background:#B7C4AE;
+    background:#AFC3A2;
 
     margin:0 40px;
 
@@ -436,7 +441,7 @@ h3{
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:0.8fr 1.2fr;
 
     gap:24px;
 
