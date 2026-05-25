@@ -35,13 +35,6 @@ h3{
 }
 
 
-
-
-
-
-
-
-
 /* HEADER */
 
 .header {
@@ -492,6 +485,7 @@ h3{
 
 
 /* HERO - SEKTION cecilie - har rykket den herned så index er først*/
+/*ARRANGEMENTER SIDE*/
 
 .hero{
 
@@ -538,6 +532,7 @@ h3{
 .hero h1{
 
     font-size:80px;
+    font-weight: 400;
 
     line-height:1.20;
 
@@ -584,12 +579,9 @@ h3{
     color:#1F1F1B;
 }
 
-.third-btn{
-    background: #C9895B;
-    color:black;
-}
-
-.fourth-btn{
+.third-btn,
+.fourth-btn
+{
     background: #C9895B;
     color:black;
 }
@@ -626,11 +618,11 @@ h3{
 
     background:#AFC3A2;
 
-    margin:0 40px;
+    margin:0px;
 
     padding:70px;
 
-    border-radius:32px;
+    border-radius:0px; /*sat helt ud til siderne = 0*/
 
     display:grid;
 
@@ -642,6 +634,7 @@ h3{
 }
 
 
+/*LILLE BOKS - FREMHÆVET EVENT */
 
 .badge{
 
@@ -659,10 +652,12 @@ h3{
 }
 
 
+/*SUNSET NIGHT TITEL*/
 
-.featured-text h2{
+.featured-text h3{
 
-    font-size:70px;
+    font-size:50px;
+    font-weight:550;
 
     margin-bottom:24px;
 }
@@ -689,25 +684,27 @@ h3{
 
 
 
+/*Sunset night billedet (fremhævet event)*/
+
 .featured-image img{
 
     width:100%;
 
-    height:520px;
+    height:450px;
 
     object-fit:cover;
 
-    border-radius:28px;
+    border-radius:15px;
 }
 
 .events{
 
-    padding:160px 40px;
+    padding:160px 40px; /*AFSTAND MELLEM EVENTS*/
 }
 
 
 
-/* OVERSKRIFT */
+/*ALLE VORES ARRANGEMENTER OVERSKRIFT*/
 
 .section-title{
 
@@ -716,27 +713,25 @@ h3{
     margin-bottom:80px;
 }
 
-
-
-.small-title{
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    margin-bottom:16px;
-}
-
-
-
 .section-title h2{
 
-    font-size:76px;
-
-    line-height:0.95;
+    font-size:64px;
 }
 
+.section-title h2::after{
 
+    content:"";
+
+    display:block;
+
+    width:100px;
+
+    height:2px;
+
+    background:#9C9C8B;
+
+    margin:24px auto;
+}
 
 /* GRID */
 
@@ -751,33 +746,34 @@ h3{
 
 
 
-/* CARDS */
+/* ALLE ARRANGEMENTER 4 CARDS */
 
 .event-card{
 
-    background:white;
+    background: #f5efe6;
 
-    border-radius:28px;
+    border-radius:10px;
+    border:1px solid black;
 
     overflow:hidden;
 }
 
 
 
-/* BILLEDER */
+/* ALLE ARRANGEMENTER 4 BILLEDER*/
 
 .event-card img{
 
     width:100%;
 
-    height:240px;
+    height:250px;
 
     object-fit:cover;
 }
 
 
 
-/* INDHOLD */
+/* CARD INDHOLD */
 
 .card-content{
 
@@ -786,7 +782,7 @@ h3{
 
 
 
-/* BADGES */
+/* ALLE ARRANGEMENTER 4 ÅRSTIDER BOKS */
 
 .event-badge{
 
@@ -809,9 +805,9 @@ h3{
 
 
 
-/* TITLER */
+/* TITLER BADGES*/
 
-.card-content h3{
+.card-content h4{
 
     font-size:28px;
 
@@ -822,7 +818,7 @@ h3{
 
 
 
-/* TEKST */
+/* TEKST BADGES*/
 
 .card-content p{
 
@@ -835,7 +831,7 @@ h3{
 
 
 
-/* INFO */
+/* INFO*/
 
 .event-meta{
 
@@ -862,7 +858,7 @@ h3{
 
 
 
-/* KNAP */
+/* LÆS MERE KNAP NEDERST I BADGES */
 
 .card-content a{
 
@@ -922,25 +918,23 @@ h3{
     border-radius:28px;
 }
 
+/*KLAR TIL NÆSTE OPLEVELSE - SEKTION*/
 /* CTA */
+
 
 .cta-section{
 
-    padding:140px 40px;
+    padding:20px 40px;
 }
 
 .cta-content{
 
-    background:#EFE8DD;
-
-    border-radius:32px;
-
-    padding:80px;
+    padding:40px;
 }
 
 .cta-content h2{
 
-    font-size:76px;
+    font-size:50px; /*KLAR TIL NÆSTE OPLEVELSE TITEL*/
 
     line-height:0.95;
 
