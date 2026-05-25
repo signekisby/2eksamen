@@ -234,7 +234,7 @@ h3{
 }
 
 .cta-btn:hover {
-    background-color: #B8794D;
+    background-color: #C9895B;
     transform: translateY(-3px);
 }
 
@@ -355,7 +355,7 @@ h3{
 }
 
 .btn-primary:hover {
-    background-color: #B8794D;
+    background-color: #C9895B;
     transform: translateY(-3px);
 }
 
@@ -582,7 +582,7 @@ h3{
 .third-btn,
 .fourth-btn
 {
-    background: #C9895B;
+    background: #c9895b;
     color:black;
 }
 
