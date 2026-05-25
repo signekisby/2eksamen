@@ -28,11 +28,44 @@ h1{
     font-weight:550;
 }
 
-h2,
+h2{
+    font-family:'DM Serif Display', serif;
+    font-size: 64px;
+    font-weight: 550;
+}
+
 h3{
     font-family:'DM Serif Display', serif;
     font-weight: 500;
 }
+
+
+
+.btn-primary {
+    display: inline-block;
+    width: fit-content;
+
+    padding: 18px 40px;
+
+    background-color: #C9895B;
+    color: #000;
+
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+
+    border-radius: 30px;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: #c88552;
+}
+
+
+
 
 
 /* HEADER */
@@ -234,7 +267,7 @@ h3{
 }
 
 .cta-btn:hover {
-    background-color: #C9895B;
+    background-color: #c88552;
     transform: translateY(-3px);
 }
 
@@ -337,27 +370,6 @@ h3{
     gap: 30px;
 }
 
-.btn-primary {
-    display: inline-block;
-
-    padding: 16px 32px;
-
-    background-color: #C9895B;
-    color: black;
-
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.2rem;
-
-    border-radius: 999px;
-
-    transition: transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #C9895B;
-    transform: translateY(-3px);
-}
 
 /* HØJRE SIDE */
 
@@ -392,7 +404,7 @@ h3{
 }
 
 .owners-section h1 {
-    font-size: 5rem;
+    font-size: 64px;
     margin-bottom: 30px;
     line-height: 1.1;
 }
@@ -426,27 +438,7 @@ h3{
     margin-top: 60px;
 }
 
-.btn-primary {
-    display: inline-block;
-    width: fit-content;
 
-    padding: 18px 40px;
-
-    background-color: #C9895B;
-    color: #000;
-
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-
-    border-radius: 999px;
-
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-}
 
 /* HØJRE SIDE */
 
@@ -462,6 +454,119 @@ h3{
 
     object-fit: cover;
     display: block;
+}
+
+
+
+
+
+
+
+
+/* GALLERI SCROLL */
+
+.gallery-section {
+    padding: 100px;
+}
+
+/* jeg laver slideren relativ,
+   så pilene kan placeres ovenpå billedet */
+
+.slider {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* jeg giver billedet samme størrelse som i designet */
+
+.slider img {
+    width: 100%;
+    max-width: 1200px;
+
+    height: 650px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 20px;
+}
+
+/* jeg laver pilene runde */
+
+.slider button {
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #AFC3A2;
+
+    cursor: pointer;
+
+    font-size: 2rem;
+}
+
+/* jeg placerer venstre pil */
+
+.prev {
+    left: -35px;
+}
+
+/* jeg placerer højre pil */
+
+.next {
+    right: -35px;
+}
+
+/* jeg giver en lille hover-effekt */
+
+.slider button:hover {
+    transform: scale(1.05);
+}
+
+.gallery-section h2{
+    margin-bottom: 5px;
+}
+
+.gallery-section p {
+    font-family: 'Manrope', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+/* KORT OVER MINIGOLF BANEN */
+.minigolfbanekort{
+    display: block;
+    /* jeg ændrer billedet fra inline til block,
+       fordi block-elementer kan centreres med margin auto */
+
+
+
+    margin: 0 auto;
+    /* 0 = ingen margin top/bund
+       auto = browseren fordeler automatisk pladsen på venstre og højre side
+       så billedet havner i midten */
+
+    width: 80%;
 }
 
 
