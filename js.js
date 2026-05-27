@@ -112,3 +112,45 @@ prevBtn.addEventListener("click", () => {
 /* jeg sørger for at det første billede vises,
    når siden åbnes */
 showImage();
+
+
+
+
+
+
+
+
+
+/*slider med 4 billeder på arrangement siden*/
+
+const slider = document.querySelector('.event-grid');
+
+const leftBtn = document.querySelector('.left');
+
+const rightBtn = document.querySelector('.right');
+
+
+
+rightBtn.addEventListener('click', () => {
+
+    slider.scrollBy({
+
+        left:300,
+
+        behavior:'smooth'
+    });
+
+});
+
+
+
+leftBtn.addEventListener('click', () => {
+
+    slider.scrollBy({
+
+        left:-300,
+
+        behavior:'smooth'
+    });
+
+});
