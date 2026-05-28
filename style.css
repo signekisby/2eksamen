@@ -3083,23 +3083,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 
 
-/* ==========================================
-   FOOTER RESPONSIVE
-========================================== */
 
-@media (max-width: 900px) {
-
-    .footer-top {
-
-        /* kolonnerne stacker */
-        flex-direction: column;
-    }
-
-    .footer-column {
-
-        width: 100%;
-    }
-}
 
 
 /* ==========================================
@@ -3156,8 +3140,6 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 /* ==========================================
    INDEX
 ========================================== */
-
-
 /* ==========================================
    MOBILE HERO
 ========================================== */
@@ -3350,7 +3332,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 }
 
 /* ==========================================
-   TABLET
+   TABLET GALLERY
 ========================================== */
 
 @media (max-width: 900px) {
@@ -3368,7 +3350,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 
 /* ==========================================
-   MOBILE
+   MOBILE GALLERY
 ========================================== */
 
 @media (max-width: 600px) {
@@ -3385,7 +3367,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 }
 
 /* ==========================================
-   TABLET
+   TABLET PRAKTISK INFORMATION
 ========================================== */
 
 @media (max-width: 800px) {
@@ -3399,6 +3381,28 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
     .sunset-practical-image {
 
         /* billedet fylder hele bredden */
+        width: 100%;
+    }
+}
+
+
+
+
+
+/* ==========================================
+   FOOTER RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .footer-top {
+
+        /* kolonnerne stacker */
+        flex-direction: column;
+    }
+
+    .footer-column {
+
         width: 100%;
     }
 }
