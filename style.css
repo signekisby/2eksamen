@@ -2089,6 +2089,79 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 
 
+/* ==========================================
+   CTA SECTION
+========================================== */
+
+.sunset-cta-section {
+
+    /* responsiv spacing */
+    padding:
+            clamp(70px, 8vw, 120px)
+            clamp(20px, 6vw, 100px);
+
+    /* responsiv afstand til footer */
+    margin-bottom: clamp(100px, 12vw, 200px);
+
+    /* background billede */
+    background-image:
+            url("kampagne-billeder/fade.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    /* jeg centrerer content */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.sunset-cta-content h2 {
+
+    color: white;
+
+    /* responsiv afstand til knappen */
+    margin-bottom: clamp(25px, 4vw, 50px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
