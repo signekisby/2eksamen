@@ -72,27 +72,37 @@ h3 {
 
 .btn {
 
+    /* jeg gør knappen fleksibel */
     display: inline-flex;
 
+    /* jeg centrerer indholdet */
     justify-content: center;
 
     align-items: center;
 
-    padding: clamp(16px, 1.5vw, 18px)
-    clamp(32px, 3vw, 45px);
+    /* responsiv padding */
+    padding:
+            clamp(16px, 1.5vw, 18px)
+            clamp(32px, 3vw, 45px);
 
+    /* jeg gør knappen rund */
     border-radius: 999px;
 
+    /* jeg fjerner underline */
     text-decoration: none;
 
+    /* font */
     font-family: 'Manrope', sans-serif;
 
+    /* responsiv fontstørrelse */
     font-size: clamp(16px, 1.5vw, 20px);
 
     font-weight: 600;
 
+    /* bedre vertical alignment */
     line-height: 1;
 
+    /* smooth hover animation */
     transition:
             background-color 0.3s ease,
             color 0.3s ease,
@@ -102,8 +112,20 @@ h3 {
 }
 
 
+/* ==========================================
+   GLOBAL HOVER
+========================================== */
 
-/* primary */
+.btn:hover {
+
+    /* lille løft ved hover */
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
 
 .btn-primary {
 
@@ -112,23 +134,23 @@ h3 {
     color: black;
 }
 
+.btn-primary:hover {
 
-/* secondary */
+    background-color: #c88552;
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
 
 .btn-secondary {
 
     border: 2px solid black;
 
-    color: black;
-
     background-color: transparent;
-}
 
-.btn-primary:hover {
-
-    background-color: #c88552;
-
-    transform: translateY(-3px);
+    color: black;
 }
 
 .btn-secondary:hover {
@@ -136,8 +158,48 @@ h3 {
     background-color: black;
 
     color: white;
+}
 
-    transform: translateY(-3px);
+
+/* ==========================================
+   LIGHT OUTLINE BUTTON
+========================================== */
+
+.btn-outline-light {
+
+    border: 2px solid white;
+
+    background-color: transparent;
+
+    color: white;
+}
+
+.btn-outline-light:hover {
+
+    background-color: white;
+
+    color: black;
+}
+
+
+/* ==========================================
+   DARK OUTLINE BUTTON
+========================================== */
+
+.btn-outline-dark {
+
+    border: 2px solid black;
+
+    background-color: transparent;
+
+    color: black;
+}
+
+.btn-outline-dark:hover {
+
+    background-color: black;
+
+    color: white;
 }
 
 
@@ -1328,32 +1390,41 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 
 
+
+
+
+
+
+
+
+
 /* ==========================================
    SUNSET NIGHTS SIDE
 ========================================== */
-
-.sunset-page {
-    background-color: #F5EFE6;
-}
+/* ==========================================
+   GLOBALE SECTION STYLES
+========================================== */
 
 
 /* ==========================================
    GLOBALE SECTION STYLES
 ========================================== */
 
-.sunset-section-header h2 {
-    margin-bottom: 50px;
-}
-
 .sunset-section-label {
 
+    /* terracotta label */
     color: #C9895B;
 
+    /* store bogstaver */
     text-transform: uppercase;
 
     font-weight: 700;
 
-    margin-bottom: 20px;
+    /* lidt tracking gør labels mere elegante */
+    letter-spacing: 1px;
+
+    /* responsiv luft under */
+    margin-bottom: clamp(12px, 2vw, 20px);
 }
 
 
@@ -1361,18 +1432,33 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
    HERO
 ========================================== */
 
+/* ==========================================
+   HERO
+========================================== */
+
 .sunset-hero {
 
+    /* parent til overlay/content */
     position: relative;
 
-    height: 90vh;
+    /* responsiv hero højde */
+    min-height: min(90vh, 700px);
 
+    /* baggrundsbillede */
     background-image: url("kampagne-billeder/kampagnehero.png");
 
     background-size: cover;
+
     background-position: center;
 
-    overflow: hidden;
+    /* jeg centrerer content vertikalt */
+    display: flex;
+
+    align-items: center;
+
+    padding:
+            clamp(120px, 10vw, 180px)
+            clamp(20px, 8vw, 100px);
 }
 
 
@@ -1382,9 +1468,11 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
     position: absolute;
 
-    inset: 0;
+    inset: 0;       /* overlay fylder hele hero */
 
     background-color: rgba(0,0,0,0.35);
+
+    z-index: 1;
 }
 
 
@@ -1392,16 +1480,13 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-hero-content {
 
-    position: absolute;
-
-    top: 50%;
-    left: 100px;
-
-    transform: translateY(-50%);
-
-    max-width: 650px;
+    /* content over overlay */
+    position: relative;
 
     z-index: 2;
+
+    /* begrænser tekstbredden */
+    max-width: 650px;
 
     color: white;
 }
@@ -1413,23 +1498,31 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
     color: white;
 
-    margin-bottom: 20px;
+    margin-bottom: clamp(15px, 2vw, 20px);
 }
+
+/* stor introtekst */
 
 .sunset-hero-lead {
 
-    font-size: 35px;
+    font-size: clamp(22px, 3vw, 35px);
 
-    margin-bottom: 50px;
+    line-height: 1.3;
+
+    margin-bottom: clamp(25px, 4vw, 50px);
 
     color: white;
+
+    font-weight: 500;
 }
+
+/* hero brødtekst */
 
 .sunset-hero-text {
 
     max-width: 500px;
 
-    margin-bottom: 40px;
+    margin-bottom: clamp(25px, 4vw, 40px);
 
     color: white;
 }
@@ -1441,33 +1534,15 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
     display: flex;
 
-    gap: 20px;
+    gap: clamp(12px, 2vw, 20px);
+
+    flex-wrap: wrap;
 }
 
 
 /* ==========================================
    BUTTONS
 ========================================== */
-
-.btn-primary,
-.btn-outline-light,
-.btn-outline-dark {
-
-    display: inline-block;
-
-    padding: 20px 40px;
-
-    border-radius: 999px;
-
-    text-decoration: none;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
 
 /* primary */
 
@@ -1524,15 +1599,18 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-about-section {
 
-    padding: 200px 100px;
+    /* responsiv spacing */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
+    /* tekst og billede ved siden af hinanden */
     display: flex;
-
-    justify-content: space-between;
 
     align-items: center;
 
-    gap: 100px;
+    /* responsiv afstand mellem content og billede */
+    gap: clamp(40px, 6vw, 100px);
 }
 
 
@@ -1541,12 +1619,16 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .sunset-about-content {
 
     flex: 1;
+
+    min-width: 0;
 }
 
 .sunset-about-content p {
 
-    margin-bottom: 40px;
+    /* responsiv luft under tekst */
+    margin-bottom: clamp(25px, 4vw, 40px);
 
+    /* jeg begrænser læsebredden */
     max-width: 650px;
 }
 
@@ -1555,18 +1637,25 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-about-info {
 
+    /* ikon og tekst på samme række */
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    /* responsiv afstand */
+    gap: clamp(10px, 2vw, 15px);
 
-    margin-bottom: 50px;
+    /* responsiv luft under */
+    margin-bottom: clamp(30px, 5vw, 50px);
+
+    flex-wrap: wrap;
 }
 
 .sunset-about-info i {
 
-    font-size: 28px;
+    /* responsiv ikon størrelse */
+    font-size: clamp(20px, 3vw, 28px);
+
 }
 
 
@@ -1575,16 +1664,21 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .sunset-about-image {
 
     flex: 1;
+    min-width: 0;
 }
 
 .sunset-about-image img {
 
+    /* billedet fylder containeren */
     width: 100%;
 
-    border-radius: 20px;
+    /* responsiv afrunding */
+    border-radius: clamp(12px, 2vw, 20px);
 
+    /* fjerner inline whitespace */
     display: block;
 }
+
 
 
 /* ==========================================
@@ -1593,79 +1687,139 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-experiences-section {
 
-    padding: 0 100px 200px;
+    /* responsiv spacing */
+    padding:
+            0
+            clamp(20px, 6vw, 100px)
+            clamp(100px, 12vw, 200px);
 }
 
 
-/* grid */
+/* ==========================================
+   GRID
+========================================== */
 
 .sunset-experience-grid {
 
-    display: flex;
+    /* responsivt grid */
+    display: grid;
 
-    gap: 30px;
+    /* automatisk responsive grid:
+   - hvert card må minimum være 180px bredt
+   - cards vokser fleksibelt og fylder resten af pladsen
+   - browseren bestemmer automatisk hvor mange cards
+     der kan være på hver række */
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
+
+    /* responsiv afstand */
+    gap: clamp(20px, 3vw, 30px);
+
+    margin-top: clamp(40px, 5vw, 60px);
 }
 
 
-/* cards */
+/* ==========================================
+   CARDS
+========================================== */
 
 .sunset-experience-card {
 
-    width: 220px;
-
+    /* lys baggrund */
     background-color: #F8F6F2;
 
-    border-radius: 20px;
+    /* responsiv afrunding */
+    border-radius: clamp(14px, 2vw, 20px);
 
     overflow: hidden;
+
+    /* jeg laver card layout */
+    display: flex;
+
+    flex-direction: column;
+
+    height: 100%;   /* samme højde på alle cards */
 }
 
 
-/* card content */
+/* ==========================================
+   CARD CONTENT
+========================================== */
 
 .sunset-experience-card-content {
 
-    padding: 35px 20px 30px;
+    /* responsiv padding */
+    padding:
+            clamp(25px, 4vw, 35px)
+            clamp(15px, 2vw, 20px)
+            clamp(25px, 4vw, 30px);
 
     text-align: center;
 
-    min-height: 320px;
+    /* content fylder resten af card */
+    flex: 1;
+
+    /* fleksibelt layout */
+    display: flex;
+
+    flex-direction: column;
+
+    /* elementerne fordeles i højden */
+    justify-content: space-between;
+
+    align-items: center;
+
+    /* responsiv afstand mellem elementer */
+    gap: clamp(15px, 2vw, 20px);
 }
 
 
-/* icons */
+/* ==========================================
+   ICONS
+========================================== */
 
 .sunset-experience-card-content i {
 
-    font-size: 42px;
+    /* responsiv ikon størrelse */
+    font-size: clamp(28px, 4vw, 42px);
 
-    margin-bottom: 25px;
+    color: #000;
 }
 
 
-/* titles */
+/* ==========================================
+   TITLES
+========================================== */
 
 .sunset-experience-card-content h3 {
 
-    margin-bottom: 25px;
+    line-height: 1.1;
 }
 
 
-/* text */
+/* ==========================================
+   TEXT
+========================================== */
 
 .sunset-experience-card-content p {
 
     line-height: 1.5;
+
+    /* bedre læsebredde */
+    max-width: 22ch;
 }
 
 
-/* images */
+/* ==========================================
+   IMAGES
+========================================== */
 
 .sunset-experience-card img {
 
     width: 100%;
 
-    height: 180px;
+    /* responsiv billedhøjde */
+    height: clamp(140px, 18vw, 180px);
 
     object-fit: cover;
 
@@ -1679,18 +1833,47 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-why-section {
 
-    padding: 0 100px 200px;
+    /* responsiv spacing */
+    padding:
+            0
+            clamp(20px, 6vw, 100px)
+            clamp(100px, 12vw, 200px);
 }
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.sunset-section-header {
+
+    /* responsiv luft under overskriften */
+    margin-bottom: clamp(5px, 2vw, 15px);
+}
+
+/* ==========================================
+   TEXT CONTAINER
+========================================== */
 
 .sunset-why-text {
 
-    max-width: 1200px;
+    /* jeg begrænser læsebredden */
+    max-width: 900px;
 }
+
+/* ==========================================
+   PARAGRAPHS
+========================================== */
 
 .sunset-why-text p {
 
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    line-height: 1.7;
 }
+
+
+
+
 
 
 /* ==========================================
@@ -1699,46 +1882,86 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-gallery-section {
 
-    background-color: #C8D3BC;
+    /* grøn baggrund */
+    background-color: #BDCCB0;
 
-    padding: 100px;
+    /* responsiv spacing rundt om sektionen */
+    padding:
+            clamp(60px, 8vw, 100px)
+            clamp(20px, 6vw, 100px);
 
+    /* jeg centrerer tekst og knap */
     text-align: center;
 }
 
+/* ==========================================
+   SECTION HEADER
+========================================== */
 
-/* grid */
+.sunset-section-header {
 
-.sunset-gallery-grid {
-
-    max-width: 1200px;
-
-    margin: 0 auto 80px;
-
-    display: grid;
-
-    grid-template-columns: 2fr 1fr 1fr;
-
-    grid-template-rows: 240px 180px;
-
-    gap: 12px;
+    /* luft under overskriften */
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
 
-/* billeder */
+/* ==========================================
+   GRID
+========================================== */
+
+.sunset-gallery-grid {
+
+    /* jeg begrænser hvor bredt galleriet må blive */
+    max-width: 1200px;
+
+    /* jeg centrerer gridet
+       og giver responsiv luft under */
+    margin:
+            0
+            auto
+            clamp(40px, 6vw, 80px);
+
+    /* jeg bruger CSS Grid layout */
+    display: grid;
+
+    /* editorial layout:
+       - første kolonne bliver stor
+       - de to andre bliver mindre */
+    grid-template-columns: 2fr 1fr 1fr;
+
+    /* responsiv rækkehøjde */
+    grid-template-rows:
+        clamp(180px, 22vw, 240px)
+        clamp(140px, 16vw, 180px);
+
+    /* responsiv afstand mellem billeder */
+    gap: clamp(8px, 1vw, 12px);
+}
+
+
+/* ==========================================
+   IMAGES
+========================================== */
 
 .sunset-gallery-grid img {
 
+    /* billederne fylder grid-cellen */
     width: 100%;
 
     height: 100%;
 
+    /* billeder beskæres pænt */
     object-fit: cover;
 
-    border-radius: 12px;
+    /* responsiv afrunding */
+    border-radius: clamp(10px, 1.5vw, 12px);
 
+    /* fjerner whitespace under billeder */
     display: block;
 }
+
+
+
 
 
 /* ==========================================
@@ -1747,82 +1970,118 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .sunset-practical-section {
 
-    padding: 200px 100px;
+    /* responsiv spacing */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
+    /* jeg placerer content og billede ved siden af hinanden */
     display: flex;
 
     justify-content: space-between;
 
+    /* jeg aligner elementerne i toppen */
     align-items: flex-start;
 
-    gap: 80px;
+    /* responsiv afstand mellem kolonner */
+    gap: clamp(40px, 6vw, 80px);
 }
 
 
-/* venstre side */
+/* ==========================================
+   LEFT CONTENT
+========================================== */
 
 .sunset-practical-content {
 
-    flex: 1;
+    /* content får mere plads end billedet */
+    flex: 1.5;
 }
 
 
-/* grid */
+/* ==========================================
+   GRID
+========================================== */
 
 .sunset-practical-grid {
 
+    /* jeg placerer cards på række */
     display: flex;
 
-    gap: 60px;
+    /* responsiv afstand mellem cards */
+    gap: clamp(25px, 4vw, 60px);
+
+    /* cards må gerne wrappe */
+    flex-wrap: wrap;
 }
 
 
-/* cards */
+/* ==========================================
+   CARDS
+========================================== */
 
 .sunset-practical-card {
 
-    max-width: 180px;
+    /* card bredde */
+    flex: 1 1 100px;
+
+    /* jeg stacker indholdet */
+    display: flex;
+
+    flex-direction: column;
+
+    gap: clamp(10px, 1.5vw, 16px);
+
+    /* begrænser card bredde */
+    max-width: 150px;
 }
 
 
-/* icons */
+/* ==========================================
+   ICONS
+========================================== */
 
 .sunset-practical-card i {
 
-    font-size: 42px;
-
-    margin-bottom: 20px;
+    /* responsiv ikon størrelse */
+    font-size: clamp(30px, 4vw, 42px);
 }
 
 
-/* titles */
-
-.sunset-practical-card h3 {
-
-    margin-bottom: 20px;
-}
 
 
-/* text */
+/* ==========================================
+   TEXT
+========================================== */
 
 .sunset-practical-card p {
 
-    line-height: 1.5;
+    line-height: 1.6;
+
+    max-width: 22ch;
 }
 
 
-/* billede */
+/* ==========================================
+   IMAGE
+========================================== */
 
 .sunset-practical-image {
 
-    flex: 0 0 520px;
+    /* fleksibel billedbredde */
+    flex: 0 1 clamp(280px, 40vw, 520px);
 }
+
+/* ==========================================
+   IMAGE
+========================================== */
 
 .sunset-practical-image img {
 
     width: 100%;
 
-    border-radius: 20px;
+    /* responsiv afrunding */
+    border-radius: clamp(12px, 2vw, 20px);
 
     display: block;
 }
@@ -2988,6 +3247,90 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
         flex-direction: column;
     }
 }
+
+
+
+
+
+
+/* ==========================================
+   KAMPAGNE SIDE - SUNSET NIGHT
+========================================== */
+
+/* ==========================================
+   ABOUT RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sunset-about-section {
+
+        /* elementerne stacker */
+        flex-direction: column;
+    }
+
+    .sunset-about-content,
+    .sunset-about-image {
+
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sunset-gallery-grid {
+
+        /* jeg laver 2 lige store kolonner */
+        grid-template-columns: 1fr 1fr;
+
+        /* alle billeder får samme responsive højde */
+        grid-template-rows:
+            repeat(3, clamp(180px, 28vw, 240px));
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .sunset-gallery-grid {
+
+        /* billederne stacker i 1 kolonne */
+        grid-template-columns: 1fr;
+
+        /* automatisk responsive højde */
+        grid-template-rows:
+            repeat(6, clamp(220px, 55vw, 320px));
+    }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 800px) {
+
+    .sunset-practical-section {
+
+        /* jeg stacker content og billede */
+        flex-direction: column;
+    }
+
+    .sunset-practical-image {
+
+        /* billedet fylder hele bredden */
+        width: 100%;
+    }
+}
+
+
 
 
 
