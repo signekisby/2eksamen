@@ -66,8 +66,8 @@ let currentIndex = 0;
 
 /* jeg finder billedet og pilene i HTML */
 const image = document.getElementById("slider-image");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".index-gallery-prev");
+const nextBtn = document.querySelector(".index-gallery-next");
 
 
 /* jeg laver en funktion som viser billedet,
