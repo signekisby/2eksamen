@@ -112,3 +112,39 @@ prevBtn.addEventListener("click", () => {
 /* jeg sørger for at det første billede vises,
    når siden åbnes */
 showImage();
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   DARK MODE TOGGLE
+========================================== */
+
+const themeToggle =
+    document.getElementById("theme-toggle");
+
+themeToggle.addEventListener("click", () => {
+
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
+
+    if (currentTheme === "dark") {
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            "light"
+        );
+
+    } else {
+
+        document.documentElement.setAttribute(
+            "data-theme",
+            "dark"
+        );
+    }
+});

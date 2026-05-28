@@ -5,9 +5,83 @@
                                 men gør jeg også*/
 }
 
+
+/* ==========================================
+   THEME VARIABLES
+========================================== */
+
+:root {
+
+    /* backgrounds */
+    --bg-color: #F5EFE6;
+
+    --section-color: #BDCCB0;
+
+    /* text */
+    --text-color: #000000;
+
+    /* cards */
+    --card-color: #F8F6F2;
+
+    /* buttons */
+    --primary-color: #C9895B;
+
+    /* header/footer */
+    --header-footer-color: #AFC3A2;
+}
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+[data-theme="dark"] {
+
+    /* backgrounds */
+    --bg-color: #1A1A1A;
+
+    --section-color: #2A2A2A;
+
+    /* text */
+    --text-color: #F5F5F5;
+
+    /* cards */
+    --card-color: #333333;
+
+    /* buttons */
+    --primary-color: #D89A6B;
+
+    /* header/footer */
+    --header-footer-color: #222222;
+}
+
+
+body,
+section,
+div,
+header,
+footer,
+a,
+button {
+
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
 body{
-    background:#F5EFE6;
-    color:#000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: 'Manrope', sans-serif;
 }
 
@@ -129,7 +203,7 @@ h3 {
 
 .btn-primary {
 
-    background-color: #C9895B;
+    background-color: var(--primary-color);
 
     color: black;
 }
@@ -234,7 +308,7 @@ h3 {
 .header {
 
     /* header baggrund */
-    background-color: #AFC3A2;
+    background-color: var(--header-footer-color);
 
     /* responsiv højde */
     min-height: clamp(80px, 10vw, 110px);
@@ -622,7 +696,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
     margin-top: clamp(100px, 12vw, 200px);
 
-    background-color: #BDCCB0;
+    background-color: var(--section-color);
 }
 
 
@@ -879,7 +953,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
     border: none;
 
     /* baggrundsfarve */
-    background-color: #AFC3A2;
+    background-color: var(--section-color);
 
     /* cursor bliver til hånd */
     cursor: pointer;
@@ -975,7 +1049,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
             clamp(20px, 6vw, 100px);
 
     /* baggrundsfarve */
-    background-color: #C8D3BC;
+    background-color: var(--section-color);
 
     /* jeg giver responsiv afstand til sektionen over */
     margin-top: clamp(100px, 12vw, 200px);
@@ -1085,8 +1159,6 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
             clamp(100px, 12vw, 200px)
             clamp(20px, 6vw, 100px);
 
-    background-color: #F5EFE6;
-
     /* jeg placerer content og billede ved siden af hinanden */
     display: flex;
 
@@ -1153,7 +1225,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .index-reviews-section {
 
     /* grøn baggrund */
-    background-color: #C8D3BC;
+    background-color: var(--section-color);
 
     /* responsiv spacing */
     padding:
@@ -1231,8 +1303,6 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
     padding:
             clamp(100px, 12vw, 200px)
             clamp(20px, 6vw, 100px);
-
-    background-color: #F5EFE6;
 
     /* map og content ved siden af hinanden */
     display: flex;
@@ -1341,7 +1411,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
     flex: 1;
 
-    background-color: #BDCCB0;
+    background-color: var(--section-color);
 
     padding: clamp(18px, 2vw, 22px);
 
@@ -1726,7 +1796,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .sunset-experience-card {
 
     /* lys baggrund */
-    background-color: #F8F6F2;
+    background-color: var(--card-color);
 
     /* responsiv afrunding */
     border-radius: clamp(14px, 2vw, 20px);
@@ -1883,7 +1953,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .sunset-gallery-section {
 
     /* grøn baggrund */
-    background-color: #BDCCB0;
+    background-color: var(--section-color);
 
     /* responsiv spacing rundt om sektionen */
     padding:
@@ -2751,7 +2821,7 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 .footer {
 
     /* footer baggrund */
-    background-color: #AFC3A2;
+    background-color: var(--header-footer-color);
 
     /* responsiv spacing */
     padding:
