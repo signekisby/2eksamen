@@ -2546,6 +2546,10 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
     display:none;
 }
 
+.event-grid{
+    overflow-y:hidden;
+}
+
 /* PIL KNAPPER */
 
 .slider-btn{

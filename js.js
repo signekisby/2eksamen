@@ -27,6 +27,11 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 
 
 
+/* ==========================================
+   BILLEDSLIDER
+========================================== */
+
+
 /* jeg laver en liste med alle billederne i galleriet
 
    hvert element er stien til et billede
@@ -70,48 +75,103 @@ const prevBtn = document.querySelector(".index-gallery-prev");
 const nextBtn = document.querySelector(".index-gallery-next");
 
 
-/* jeg laver en funktion som viser billedet,
-   der svarer til currentIndex */
-function showImage() {
-    image.src = billeder[currentIndex];
+/* jeg tjekker at slideren findes på siden
+
+   hvis elementerne ikke findes,
+   springer JavaScript denne del over
+   uden at give fejl
+*/
+if (image && prevBtn && nextBtn) {
+
+    /* jeg laver en funktion som viser billedet,
+       der svarer til currentIndex */
+    function showImage() {
+
+        image.src = billeder[currentIndex];
+    }
+
+
+    /* når jeg klikker på højre pil,
+       går jeg videre til næste billede */
+    nextBtn.addEventListener("click", () => {
+
+        currentIndex++;
+
+        /* hvis jeg er nået til sidste billede,
+           starter jeg forfra */
+        if (currentIndex >= billeder.length) {
+
+            currentIndex = 0;
+        }
+
+        showImage();
+    });
+
+
+    /* når jeg klikker på venstre pil,
+       går jeg tilbage til forrige billede */
+    prevBtn.addEventListener("click", () => {
+
+        currentIndex--;
+
+        /* hvis jeg går længere tilbage end første billede,
+           hopper jeg til det sidste billede */
+        if (currentIndex < 0) {
+
+            currentIndex = billeder.length - 1;
+        }
+
+        showImage();
+    });
+
+
+    /* jeg sørger for at det første billede vises,
+       når siden åbnes */
+    showImage();
 }
 
 
-/* når jeg klikker på højre pil,
-   går jeg videre til næste billede */
-nextBtn.addEventListener("click", () => {
-
-    currentIndex++;
-
-    /* hvis jeg er nået til sidste billede,
-       starter jeg forfra */
-    if (currentIndex >= billeder.length) {
-        currentIndex = 0;
-    }
-
-    showImage();
-});
 
 
-/* når jeg klikker på venstre pil,
-   går jeg tilbage til forrige billede */
-prevBtn.addEventListener("click", () => {
-
-    currentIndex--;
-
-    /* hvis jeg går længere tilbage end første billede,
-       hopper jeg til det sidste billede */
-    if (currentIndex < 0) {
-        currentIndex = billeder.length - 1;
-    }
-
-    showImage();
-});
 
 
-/* jeg sørger for at det første billede vises,
-   når siden åbnes */
-showImage();
+
+
+
+
+
+
+
+
+const slider = document.querySelector('.event-grid');
+const leftBtn = document.querySelector('.left');
+const rightBtn = document.querySelector('.right');
+
+if (slider && leftBtn && rightBtn) {
+
+    rightBtn.addEventListener('click', () => {
+
+        slider.scrollBy({
+            left:300,
+            behavior:'smooth'
+        });
+
+    });
+
+    leftBtn.addEventListener('click', () => {
+
+        slider.scrollBy({
+            left:-300,
+            behavior:'smooth'
+        });
+
+    });
+
+}
+
+
+
+
 
 
 
@@ -128,26 +188,32 @@ showImage();
 const themeToggle =
     document.getElementById("theme-toggle");
 
-themeToggle.addEventListener("click", () => {
+if (themeToggle) {
 
-    const currentTheme =
-        document.documentElement.getAttribute("data-theme");
+    themeToggle.addEventListener("click", () => {
 
-    if (currentTheme === "dark") {
+        const currentTheme =
+            document.documentElement.getAttribute("data-theme");
 
-        document.documentElement.setAttribute(
-            "data-theme",
-            "light"
-        );
+        if (currentTheme === "dark") {
 
-    } else {
+            document.documentElement.setAttribute(
+                "data-theme",
+                "light"
+            );
 
-        document.documentElement.setAttribute(
-            "data-theme",
-            "dark"
-        );
-    }
-});
+        } else {
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                "dark"
+            );
+        }
+
+    });
+
+}
+
 
 
 
