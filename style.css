@@ -2301,10 +2301,6 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 
 .hero h1{
 
-    font-size:65px;
-
-    line-height:1.20;
-
     margin-bottom:28px;
 }
 
@@ -2502,8 +2498,6 @@ background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
 }
 
 .section-title h2{
-
-    font-size:64px;
 }
 
 .section-title h2::after{
