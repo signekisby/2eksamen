@@ -5,121 +5,378 @@
                                 men gør jeg også*/
 }
 
+
+/* ==========================================
+   THEME VARIABLES
+========================================== */
+
+:root {
+
+    /* backgrounds */
+    --bg-color: #F5EFE6;
+
+    --section-color: #BDCCB0;
+
+    /* text */
+    --text-color: #000000;
+
+    /* cards */
+    --card-color: #F8F6F2;
+
+    /* buttons */
+    --primary-color: #C9895B;
+
+    /* header/footer */
+    --header-footer-color: #AFC3A2;
+}
+
+
+/* ==========================================
+   DARK MODE
+========================================== */
+
+[data-theme="dark"] {
+
+    /* backgrounds */
+    --bg-color: #1A1A1A;
+
+    --section-color: #2A2A2A;
+
+    /* text */
+    --text-color: #F5F5F5;
+
+    /* cards */
+    --card-color: #333333;
+
+    /* buttons */
+    --primary-color: #D89A6B;
+
+    /* header/footer */
+    --header-footer-color: #222222;
+}
+
+
+body,
+section,
+div,
+header,
+footer,
+a,
+button {
+
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
 body{
-    background:#F5EFE6;
-    color:#000000;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Manrope', sans-serif;
+}
+
+main p {
+
+    font-family: 'Manrope', sans-serif;
+
+    font-size: clamp(16px, 1.2vw, 18px);
+
+    font-weight: 400;
+
     line-height: 1.6;
 }
 
-main p{
-    font-family:'Manrope', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-main a{
-    font-family:'Manrope', sans-serif;
-    font-size: 18px;
-}
 
 
-img{
-    width:100%;
-    display:block;
-}
 
-h1{
-    font-family:'DM Serif Display', serif;
-    font-size: 64px;
-    font-weight:550;
-}
+h1 {
 
-h2{
-    font-family:'DM Serif Display', serif;
-    font-size: 48px;
-    font-weight: 550;
-}
+    font-family: 'DM Serif Display', serif;
 
-h3{
-    font-family:'DM Serif Display', serif;
-    font-weight: 550;
-    font-size: 40px;
+    font-size: clamp(42px, 5vw, 64px);
+
+    font-weight: 700;
+
+    line-height: 1.1;
 }
 
 
 
-.btn-primary {
-    display: inline-block;
-    width: fit-content;
+h2 {
 
-    padding: 18px 40px;
+    font-family: 'DM Serif Display', serif;
 
-    background-color: #C9895B;
-    color: #000;
+    font-size: clamp(34px, 4vw, 48px);
 
-    text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+
+    line-height: 1.1;
+}
+
+
+
+h3 {
+
+    font-family: 'DM Serif Display', serif;
+
+    font-size: clamp(24px, 3vw, 32px);
+
     font-weight: 600;
 
-    border-radius: 30px;
+    line-height: 1.2;
+}
 
-    transition: all 0.3s ease;
+
+
+
+
+/* ==========================================
+   GLOBAL BUTTONS
+========================================== */
+
+.btn {
+
+    /* jeg gør knappen fleksibel */
+    display: inline-flex;
+
+    /* jeg centrerer indholdet */
+    justify-content: center;
+
+    align-items: center;
+
+    /* responsiv padding */
+    padding:
+            clamp(16px, 1.5vw, 18px)
+            clamp(32px, 3vw, 45px);
+
+    /* jeg gør knappen rund */
+    border-radius: 999px;
+
+    /* jeg fjerner underline */
+    text-decoration: none;
+
+    /* font */
+    font-family: 'Manrope', sans-serif;
+
+    /* responsiv fontstørrelse */
+    font-size: clamp(16px, 1.5vw, 20px);
+
+    font-weight: 600;
+
+    /* bedre vertical alignment */
+    line-height: 1;
+
+    /* smooth hover animation */
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease,
+            transform 0.3s ease;
+
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   GLOBAL HOVER
+========================================== */
+
+.btn:hover {
+
+    /* lille løft ved hover */
+    transform: translateY(-3px);
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.btn-primary {
+
+    background-color: var(--primary-color);
+
+    color: black;
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
+
     background-color: #c88552;
 }
 
 
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
 
+.btn-secondary {
 
+    border: 2px solid black;
 
-/* HEADER */
+    background-color: transparent;
 
-.header {
-    background-color: #AFC3A2;
-    height: 110px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 0 40px;
+    color: black;
 }
 
-/* LOGO */
+.btn-secondary:hover {
+
+    background-color: black;
+
+    color: white;
+}
+
+
+/* ==========================================
+   LIGHT OUTLINE BUTTON
+========================================== */
+
+.btn-outline-light {
+
+    border: 2px solid white;
+
+    background-color: transparent;
+
+    color: white;
+}
+
+.btn-outline-light:hover {
+
+    background-color: white;
+
+    color: black;
+}
+
+
+/* ==========================================
+   DARK OUTLINE BUTTON
+========================================== */
+
+.btn-outline-dark {
+
+    border: 2px solid black;
+
+    background-color: transparent;
+
+    color: black;
+}
+
+.btn-outline-dark:hover {
+
+    background-color: black;
+
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+
+    /* header baggrund */
+    background-color: var(--header-footer-color);
+
+    /* responsiv højde */
+    min-height: clamp(80px, 10vw, 110px);
+
+    /* logo og navigation på samme række */
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    /* responsiv luft i siderne */
+    padding:
+            0
+            clamp(20px, 5vw, 40px);
+
+    position: relative;
+}
+
+/* ==========================================
+   LOGO
+========================================== */
 
 .logo img {
-    height: 70px;
+
+    /* responsiv logo størrelse */
+    height: clamp(45px, 6vw, 70px);
+
     width: auto;
+
     display: block;
 }
 
-/* NAVIGATION */
+/* ==========================================
+   NAV LINKS
+========================================== */
 
 .nav-links {
+
+    /* links på række */
     display: flex;
-    gap: 50px;
+
+    /* responsiv afstand */
+    gap: clamp(20px, 3vw, 50px);
 
     list-style: none;
+
     margin: 0;
+
     padding: 0;
 }
 
-/* LINKS */
 
 .nav-links a {
+
     position: relative;
 
     text-decoration: none;
+
     color: #000;
 
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.3rem;
-    font-weight: 350;
+    font-size: clamp(16px, 1.3vw, 20px);
 
-    transition: color 0.3s ease;
+    font-weight: 500;
+
+    transition:
+            color 0.3s ease,
+            opacity 0.3s ease;
 }
 
 /* HOVER */
@@ -137,28 +394,92 @@ h3{
 /* STREG UNDER AKTIV SIDE */
 
 .nav-links a.active::after {
+
+    /* jeg opretter et tomt pseudo-element. Uden content ville pseudo-elementet ikke eksistere
+    så ::after ville ikke blive vist */
     content: "";
 
     position: absolute;
+
     left: 0;
-    bottom: -8px;
+
+    bottom: -6px;
 
     width: 100%;
-    height: 3px;
+
+    height: clamp(2px, 0.3vw, 3px);
 
     background-color: #C9895B;
+
     border-radius: 999px;
 }
 
-/* BURGER */
+/* ==========================================
+   BURGER MENU
+========================================== */
 
+/* jeg skjuler checkboxen */
 #menu-toggle {
+
     display: none;
 }
+
+
+/* burger ikon */
 
 .burger {
+
     display: none;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    cursor: pointer;
 }
+
+
+/* de tre streger */
+
+.burger span {
+
+    width: 30px;
+
+    height: 3px;
+
+    background-color: black;
+
+    border-radius: 999px;
+
+    transition: 0.3s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -176,545 +497,279 @@ h3{
 
 
 /* ==========================================
-   FOOTER
+   INDEX PAGE
 ========================================== */
-
-
-
-.footer {
-
-    /* jeg bruger samme grønne farve som designet */
-    background-color: #AFC3A2;
-
-    /* jeg giver luft hele vejen rundt */
-    padding: 100px;
-
-}
-
-.footer a, p {
-    font-size: 19px;
-}
-
-
 /* ==========================================
-   TOP DEL
+   HERO
 ========================================== */
 
-.footer-top {
+.index-hero {
 
-    /* jeg placerer de tre kolonner ved siden af hinanden */
+    position: relative;
+
+    width: 100%;
+
+    min-height: 85vh;
+
+    overflow: visible;
+
     display: flex;
 
-    justify-content: space-between;
+    align-items: center;
 
-    gap: 100px;
-
-    margin-bottom: 120px;
-
-}
-
-.footer-column {
-
-    flex: 1;
-
-}
-
-.footer-column h3 {
-    margin-bottom: 35px;
-
-    font-size: 30px;
+    justify-content: center;
 }
 
 
-/* ==========================================
-   ÅBNINGSTIDER
-========================================== */
+/* VIDEO */
 
-.footer-hours {
+.index-hero-video {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+}
+
+
+/* OVERLAY - så teksten bliver læsbar */
+
+.index-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;                  /* fylder hele hero automatisk */
+
+background-color: rgba(0,0,0,0.35);   /* sort overlay med 35% opacity */
+
+    z-index: 1;         /* så den ligger ovenpå video, da video er 0 */
+}
+
+
+/* TERRACOTTA LINE */
+
+.index-hero::after {
+
+    content: "";
+
+    position: absolute;         /* linjen ligger ovenpå hero */
+
+    left: 0;
+    bottom: 0;              /* placeret præcist nederst */
+
+    width: 100%;
+
+    height: clamp(6px, 1vw, 12px);
+
+    background-color: #C9895B;
+
+    z-index: 3;         /* over overlay og video men under CTA */
+}
+
+
+/* CONTENT */
+
+.index-hero-content {
+
+    position: relative;         /* content ligger over overlay. z.index virker korrekt */
+
+    z-index: 2;
+
+    width: min(90%, 1100px);           /* betyder brug det mindste af:
+                                        - 90% af skærmen --> mobil → ca 90%
+                                        - 1100px --> desktop → stopper ved 1100px */
+
+    text-align: center;     /* hero-content centreres */
+
+    color: white;
+
+    padding-inline: 20px;           /* gør ar teksten aldrig rammer kanten på mobil og bedre breathing room */
 
     display: flex;
 
     flex-direction: column;
 
-    gap: 20px;
-
-}
-
-
-/* jeg laver én samlet række */
-
-.footer-row {
-
-    display: flex;
-
-    font-size: 19px;
-
-}
-
-
-
-/* jeg styler venstre halvdel */
-
-.footer-day {
-
-    flex: 2;
-
-    background-color: #D7DEC9;
-
-    padding: 18px 25px;
-
-    border-radius: 12px 0 0 12px;
-
-}
-
-
-/* jeg styler højre halvdel */
-
-.footer-time {
-
-    flex: 1;
-
-    background-color: #D9D9D9;
-
-    padding: 18px 25px;
-
-    text-align: center;
-
-    border-radius: 0 12px 12px 0;
-
-}
-
-.footer-note {
-
-    margin-top: 35px;
-
-}
-
-
-/* ==========================================
-   FIND OS
-========================================== */
-
-.footer-contact-item {
-
-    /* jeg placerer ikon og tekst ved siden af hinanden */
-    display: flex;
-
     align-items: center;
-
-    gap: 20px;
-
-    margin-bottom: 35px;
-
 }
 
-.footer-contact-item i {
 
-    /* jeg gør ikonerne store ligesom designet */
-    font-size: 2rem;
+/* H1 */
 
-    width: 40px;
+.index-hero-content h1 {
 
+    color: white;
+
+    margin-bottom: 20px;
 }
 
-.footer-contact-item p {
 
-    margin: 0;
+/* TEXT */
+
+.index-hero-content p {
+
+    width: min(100%, 900px);
+
+    color: white;
 
     line-height: 1.5;
 
-}
-
-.footer-contact-item a {
-
-    color: black;
-
+    font-size: clamp(18px, 2vw, 24px);
 }
 
 
-/* ==========================================
-   KNAP
-========================================== */
+/* BUTTONS */
 
-.footer-btn {
+.index-hero-buttons {
 
-    display: inline-block;
-
-    margin-top: 20px;
-
-    padding: 15px 35px;
-
-    background-color: #C9895B;
-
-    color: black;
-
-    text-decoration: none;
-
-    border-radius: 999px;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-weight: 600;
-
-    transition: 0.3s;
-
-}
-
-.footer-btn:hover {
-
-    transform: translateY(-3px);
-
-}
-
-
-/* ==========================================
-   LINKS
-========================================== */
-
-.footer-links {
-
-    list-style: none;
-
-    padding: 0;
-
-}
-
-.footer-links li {
-
-    margin-bottom: 18px;
-
-}
-
-.footer-links a {
-
-    color: black;
-
-    text-decoration: none;
-
-}
-
-
-/* ==========================================
-   SOCIALE MEDIER
-========================================== */
-
-.social-icons {
-
-    display: flex;
-
-    gap: 20px;
-
-    margin-top: 40px;
-
-}
-
-.social-icons a {
-
-    width: 60px;
-
-    height: 60px;
-
-    border: 3px solid black;
-
-    border-radius: 50%;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    color: black;
-
-    text-decoration: none;
-
-    font-size: 28px;
-
-    transition: 0.3s;
-
-}
-
-.social-icons a:hover {
-
-    transform: translateY(-3px);
-
-}
-
-
-/* ==========================================
-   BUND
-========================================== */
-
-.footer-bottom {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-
-    border-top: 1px solid rgba(0,0,0,0.15);
-
-    padding-top: 35px;
-
-    font-size: 15px;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Index */
-
-/* HERO VIDEO */
-
-.hero-video {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    overflow: visible;
-}
-
-/* VIDEO */
-
-.hero-video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* MØRKT OVERLAY */
-
-.hero-video::before {
-    content: "";
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.30);
-    z-index: 1;
-}
 
-/* TERRACOTTA STREG I BUNDEN */
-
-.hero-video::after {            /* Opretter et usynligt element efter indholdet i .hero-video */
-    content: "";                /* Pseudo-elementer virker kun hvis de har content. Her er indholdet tomt (""),
-                                fordi vi bare vil bruge elementet som en farvet bjælke. */
-    position: absolute;         /* Gør at elementet kan placeres præcist inde i .hero-video. Det virker fordi man har:
-                                .hero-video {position: relative;}
-                                Så bliver .hero-video referencepunktet */
-    left: 0;                    /* Starter helt ude ved venstre kant */
-    bottom: 0;                  /* Placerer elementet helt nede i bunden af .hero-video */
-
-    width: 100%;
-    height: 12px;
-
-    background-color: #C9895B;
-    z-index: 3;
-}
-
-/* TEKST PÅ VIDEO */
-
-.hero-text {
-    position: absolute;
-    top: 45%;               /* Hvor langt fra toppen. 50% ville være midt på videoen */
-    left: 50%;              /* Så den er centreret midt på skærmen */
-    transform: translate(-50%, -50%);
-
-    text-align: center;
-    color: white;
-    z-index: 2;
-
-    max-width: 1200px;
-   width: 90%;
-}
-
-.hero-text h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 4rem;
-    margin-bottom: 10px;
-}
-
-.hero-text p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.6rem;
-    line-height: 1.4;
-}
-
-/* CTA KNAPPER */
-
-.hero-cta {
-    position: absolute;
-    bottom: -35px;
     left: 50%;
+    bottom: -26px;
 
     transform: translateX(-50%);
 
     display: flex;
-    gap: 80px;
 
-    z-index: 10;
-}
+    gap: clamp(15px, 3vw, 40px);
 
-.cta-btn {
-    background-color: #C9895B;
-    color: black;
+    z-index: 5;
 
-    text-decoration: none;
+    flex-wrap: wrap;
 
-    padding: 15px 60px;
-
-    border-radius: 50px;
-
-    font-family: 'Manrope', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-.cta-btn:hover {
-    background-color: #c88552;
-    transform: translateY(-3px);
+    justify-content: center;
 }
 
 
 
 
+/* ==========================================
+   INTRO
+========================================== */
 
+.index-intro-section {
 
-
-/* MERE END BARE MINIGOLF */
-
-.index-section1 h1{
-    margin-top: 200px;
-    margin-left: 100px;
-    margin-right: 100px;
-    line-height: 110px;
+    padding: 200px 100px 0;
 }
 
-.index-section1 p{
-    margin-left: 100px;
-    margin-right: 100px;
+.index-intro-section p {
+
+    max-width: 1100px;
+
     margin-bottom: 30px;
 }
 
+.index-intro-section h2 {
 
+    max-width: 1100px;
 
-
-
-
-
-
-
-
-
-
-/* INDEX FEATURED EVENT */
-
-.index-featured-event {
-    background-color: #BDCCB0;
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 80px;
-
-    padding: 80px 100px;
-
-    margin-top: 200px;
+    margin-bottom: 20px;
 }
 
-/* VENSTRE SIDE */
 
-.index-event-content {
-    flex: 1;
+
+
+
+
+
+
+/* ==========================================
+   FEATURED EVENT
+========================================== */
+
+.index-featured-event-section {
+
+    display: flex;          /* lægger content og image ved siden af hinanden */
+
+    align-items: center;        /* centrerer content og billede vertikalt */
+
+    gap: clamp(40px, 6vw, 80px);
+
+    padding: clamp(60px, 8vw, 80px)
+    clamp(20px, 6vw, 100px);
+
+    margin-top: clamp(100px, 12vw, 200px);
+
+    background-color: var(--section-color);
+}
+
+
+/* content */
+
+.index-featured-event-content {
+
+    flex: 1;        /* content tager fleksibel plads - elementet må fylde den plads der er tilgængelig inde i flex-containeren. */
+
     max-width: 550px;
 }
 
-.index-event-content h2 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 64px;
-    margin-bottom: 20px;
-    font-weight: 500;
+.index-featured-event-content h2 {
+
+    margin-bottom: clamp(15px, 2vw, 20px);
 }
 
-.index-event-content h3 {
-    font-family: 'DM Serif Display', serif;
-    font-size: 40px;
-    margin-bottom: 20px;
-    font-weight: 510;
+.index-featured-event-content h3 {
+
+    margin-bottom: clamp(15px, 2vw, 20px);
 }
 
-.index-event-content p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 25px;
-    line-height: 1.5;
-    margin-bottom: 40px;
+.index-featured-event-content p {
+
+    margin-bottom: clamp(25px, 4vw, 40px);
 }
 
-/* INFO LISTE */
 
-.index-event-info {
+/* list */
+
+.index-featured-event-list {
+
     list-style: none;
+
     padding: 0;
-    margin-bottom: 50px;
+
+    margin-bottom: clamp(30px, 5vw, 50px);
 }
 
-.index-event-info li {
-    font-family: 'Manrope', sans-serif;
-    font-size: 20px;
-    margin-bottom: 15px;
+.index-featured-event-list li {
+
+    margin-bottom: clamp(10px, 2vw, 15px);
 }
 
-/* KNAPPER */
 
-.index-event-buttons {
+/* buttons */
+
+.index-featured-event-buttons {
+
     display: flex;
-    gap: 30px;
+
+    gap: clamp(15px, 3vw, 30px);
+
+    flex-wrap: wrap;
 }
 
 
-/* HØJRE SIDE */
+/* image */
 
-.index-event-image {
+.index-featured-event-image {
+
     flex: 1;
+
+    display: flex;
+
+    justify-content: center;
 }
 
-.index-event-image img {
+.index-featured-event-image img {
+
     width: 100%;
+
+    max-width: 700px;
 
     border-radius: 20px;
 
@@ -723,72 +778,83 @@ h3{
 
 
 
+/* ==========================================
+   STORY SECTION
+========================================== */
 
+.index-story-section {
 
+    padding: clamp(100px, 12vw, 200px)
+    clamp(20px, 6vw, 100px);
+    /* hvad det gør:
+    Desktop:
+    200px top/bottom
+    100px sider
 
-
-
-
-
-
-
-/* SECTION 2 - INFO OM DEM */
-
-.owners-section {
-    padding: 200px 100px;
-    background-color: #F5EFE6;
+    Mobil:
+    100px top/bottom
+    20px sider*/
 }
 
-.owners-section h1 {
-    font-size: 64px;
-    margin-bottom: 30px;
-    line-height: 1.1;
-}
 
-.owners-wrapper {
+/* wrapper */
+
+.index-story-wrapper {
+
     display: flex;
-    justify-content: space-between;
+
     align-items: center;
-    gap: 80px;
+
+    gap: clamp(40px, 6vw, 80px);
 }
 
-/* VENSTRE SIDE */
 
-.owners-content {
+/* content */
+
+.index-story-content {
+
     flex: 1;
+
     max-width: 600px;
 }
 
-.owners-content p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 20px;
-    margin-bottom: 30px;
+.index-story-content p {
+
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
-/* KNAPPER */
 
-.owners-buttons {
+/* buttons */
+
+.index-story-buttons {
+
     display: flex;
+
     flex-direction: column;
-    gap: 30px;
-    margin-top: 60px;
+
+    gap: clamp(20px, 3vw, 30px);
+
+    margin-top: clamp(40px, 5vw, 60px);
 }
 
 
+/* images */
 
-/* HØJRE SIDE */
+.index-story-images {
 
-.owners-images {
     display: flex;
-    gap: 0;
-    flex-shrink: 0;
+
+    margin: 0;
 }
 
-.owners-images img {
-    width: 330px;
-    height: 520px;
+.index-story-images img {
+
+    width: clamp(220px, 28vw, 330px);
+
+    aspect-ratio: 330 / 520;        /* lader browseren selv regne højden ud korrekt */
 
     object-fit: cover;
+
     display: block;
 }
 
@@ -796,290 +862,354 @@ h3{
 
 
 
+/* ==========================================
+   GALLERY
+========================================== */
 
+.index-gallery-section {
 
-
-/* GALLERI SCROLL */
-
-.gallery-section {
-    padding: 100px;
-    margin-bottom: 100px;
+    /* jeg giver responsiv luft rundt om sektionen */
+    padding:
+            clamp(80px, 10vw, 100px)
+            clamp(20px, 6vw, 100px);
 }
 
-/* jeg laver slideren relativ,
-   så pilene kan placeres ovenpå billedet */
 
-.slider {
+/* text */
+
+.index-gallery-section p {
+
+    /* jeg giver responsiv luft under teksten */
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    /* jeg begrænser læsebredden hvilket forhindrer ekstremt lange tekstlinjer og dårlig readability på store skærme */
+    max-width: 1000px;
+}
+
+
+/* slider */
+
+.index-gallery-slider {
+
+    /* jeg gør slideren til reference for absolute buttons */
     position: relative;
 
+    /* jeg centrerer billedet */
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 
-    margin-top: 30px;
-    margin-bottom: 30px;
+    /* jeg giver responsiv luft under slideren */
+    margin-bottom: clamp(25px, 4vw, 40px);
 }
 
-/* jeg giver billedet samme størrelse som i designet */
 
-.slider img {
+/* image */
+
+.index-gallery-slider img {
+
+    /* billedet fylder hele bredden */
     width: 100%;
+
+    /* men stopper ved 1200px */
     max-width: 1200px;
 
-    height: 650px;
+    /* jeg holder proportionerne responsive
+     Så browseren:
+    -regner selv højden ud
+    -holder proportionerne korrekte
+    -bliver responsiv automatisk*/
+    aspect-ratio: 16 / 9;
 
+    /* jeg beskærer billedet pænt */
     object-fit: cover;
-    display: block;
 
+    /* afrundede hjørner */
     border-radius: 20px;
+
+    /* fjerner inline spacing */
+    display: block;
 }
 
-/* jeg laver pilene runde */
 
-.slider button {
+/* buttons */
+
+.index-gallery-slider button {
+
+    /* jeg placerer knapperne ovenpå slideren */
     position: absolute;
 
-    width: 70px;
-    height: 70px;
+    /* responsiv størrelse */
+    width: clamp(45px, 6vw, 70px);
 
-    border: none;
+    height: clamp(45px, 6vw, 70px);
+
+    /* jeg gør knapperne runde */
     border-radius: 50%;
 
-    background: #AFC3A2;
+    /* jeg fjerner standard border */
+    border: none;
 
+    /* baggrundsfarve */
+    background-color: var(--section-color);
+
+    /* cursor bliver til hånd */
     cursor: pointer;
 
-    font-size: 2rem;
+    /* responsiv ikon størrelse */
+    font-size: clamp(1.2rem, 3vw, 2rem);
+
+    /* smooth hover */
+    transition: transform 0.3s ease;
 }
 
-/* jeg placerer venstre pil */
 
-.prev {
-    left: -35px;
+.index-gallery-prev {
+
+    /* jeg placerer knappen responsivt til venstre */
+    left: clamp(-15px, -2vw, -35px);
 }
 
-/* jeg placerer højre pil */
 
-.next {
-    right: -35px;
+.index-gallery-next {
+
+    /* jeg placerer knappen responsivt til højre */
+    right: clamp(-15px, -2vw, -35px);
 }
 
-/* jeg giver en lille hover-effekt */
 
-.slider button:hover {
+/* hover */
+
+.index-gallery-slider button:hover {
+
+    /* lille hover animation */
     transform: scale(1.05);
 }
 
-.gallery-section h2{
-    margin-bottom: 5px;
+
+
+
+
+/* ==========================================
+   COURSE MAP
+========================================== */
+
+.index-course-map-section {
+
+    /* jeg giver responsiv luft i siderne */
+    padding: 0 clamp(20px, 6vw, 100px);
 }
 
-.gallery-section p {
-    font-family: 'Manrope', sans-serif;
-    font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: 500;
+.index-course-map {
+
+    margin: 0;
 }
 
+.index-course-map img {
 
+    /* billedet fylder hele containeren */
+    width: 100%;
 
+    /* billedet bliver responsivt */
+    max-width: 1600px;
 
+    /* jeg holder proportionerne korrekte på billedet */
+    height: auto;
 
-
-
-
-
-
-/* KORT OVER MINIGOLF BANEN */
-.minigolfbanekort{
+    /* fjerner inline whitespace
+    UDEN display:block
+    ┌───────────┐
+    │ billede   │
+    └───────────┘
+    ____________ ← lille gap til tekst
+    MED display:block
+    ┌───────────┐
+    │ billede   │
+    └───────────┘
+    ingen ekstra luft.*/
     display: block;
-    /* jeg ændrer billedet fra inline til block,
-       fordi block-elementer kan centreres med margin auto */
 
-
-
+    /* centrerer billedet */
     margin: 0 auto;
-    /* 0 = ingen margin top/bund
-       auto = browseren fordeler automatisk pladsen på venstre og højre side
-       så billedet havner i midten */
-
-    width: 80%;
 }
 
 
 
-
-
-
-
-
-
-
-
 /* ==========================================
-   ANDRE SPIL SECTION
+   GAMES
 ========================================== */
 
-.games-section {
+.index-games-section {
 
-    /* jeg giver sektionen samme afstand som resten af siden */
-    padding: 100px;
+    /* jeg giver responsiv luft rundt om sektionen */
+    padding:
+            clamp(80px, 10vw, 100px)
+            clamp(20px, 6vw, 100px);
 
-    background-color: #C8D3BC;
-    margin-top: 200px;
+    /* baggrundsfarve */
+    background-color: var(--section-color);
+
+    /* jeg giver responsiv afstand til sektionen over */
+    margin-top: clamp(100px, 12vw, 200px);
+    margin-bottom: clamp(100px, 12vw, 200px);
 }
 
 
-/* ==========================================
-   ØVERSTE DEL
-========================================== */
+/* top */
 
-.games-top {
+.index-games-top {
 
-    /* jeg placerer tekst og billede ved siden af hinanden */
+    /* jeg placerer content og billede ved siden af hinanden */
     display: flex;
 
-    justify-content: space-between;
-
+    /* jeg aligner dem i toppen */
     align-items: flex-start;
 
-    gap: 100px;
+    /* responsiv afstand mellem dem */
+    gap: clamp(40px, 6vw, 100px);
 }
 
 
-/* ==========================================
-   TEKST
-========================================== */
+/* content */
 
-.games-content {
+.index-games-content {
 
     flex: 1;
 }
 
-.games-content h2 {
-    margin-bottom: 20px;
+.index-games-content h2 {
+
+    /* luft under h2 */
+    margin-bottom: clamp(15px, 2vw, 20px);
 }
 
-.games-content h3 {
-    margin-bottom: 30px;
+.index-games-content h3 {
+
+    /* luft under h3 */
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
-.games-content p {
-    font-size: 25px;
+.index-games-content p {
 
-    margin-bottom: 10px;
+    /* luft mellem paragraphs */
+    margin-bottom: clamp(10px, 2vw, 15px);
 
+    /* jeg begrænser læsebredden */
     max-width: 700px;
 }
 
 
-/* ==========================================
-   BILLEDE TIL HØJRE
-========================================== */
+/* image */
 
-.games-image img {
+.index-games-image img {
 
-    /* jeg giver billedet samme størrelse som designet */
-    width: 650px;
+    /* billedet fylder containeren */
+    width: 100%;
 
+    /* men stopper ved 650px */
+    max-width: 650px;
+
+    /* afrundede hjørner */
     border-radius: 15px;
 
+    /* fjerner inline whitespace */
     display: block;
-
-    margin-top: 20px;
 }
 
 
-/* ==========================================
-   IKONER NEDERST
-========================================== */
+/* icons */
 
-.games-icons {
+.index-games-icons {
 
-    /* jeg placerer ikonbilledet midt på siden */
+    /* jeg centrerer billedet */
     text-align: center;
 
-    margin-top: 80px;
+    /* responsiv luft over */
+    margin-top: clamp(50px, 8vw, 80px);
+
+    margin-bottom: 0;
 }
 
-.games-icons img {
+.index-games-icons img {
 
-    /* jeg gør ikonbilledet bredt men responsivt */
-    width: 80%;
+    /* billedet fylder størstedelen af containeren men aldrig over 1300px */
+    width: min(100%, 1300px);
 
-    max-width: 1300px;
-
-    display: block;
-
+    /* jeg centrerer billedet */
     margin: 0 auto;
+
+    /* fjerner inline whitespace */
+    display: block;
 }
-
-
-
-
-
-
-
-
-
 
 
 
 
 
 /* ==========================================
-   HVORFOR VÆLGE OS
+   WHY SECTION
 ========================================== */
 
-.why-us {
+.index-why-section {
 
-    /* jeg giver sektionen 100px afstand til begge sider og 200px top og bund */
-    padding: 200px 100px;
+    /* jeg giver sektionen responsiv luft */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
-    background-color: #F5EFE6;
-
-    /* jeg placerer tekst og billede ved siden af hinanden */
+    /* jeg placerer content og billede ved siden af hinanden */
     display: flex;
-
-    justify-content: space-between;
 
     align-items: center;
 
-    gap: 100px;
+    gap: clamp(40px, 6vw, 100px);
 }
 
 
 /* ==========================================
-   VENSTRE SIDE
+   CONTENT
 ========================================== */
 
-.why-us-content {
-    /* jeg lader teksten fylde resten af pladsen */
+.index-why-content {
+
+    /* content fylder fleksibelt */
     flex: 1;
+
+    /* jeg begrænser læsebredden */
+    max-width: 700px;
 }
 
-.why-us-content h2 {
-    margin-bottom: 30px;
+.index-why-content h2 {
+
+    /* luft under overskrift */
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
-.why-us-content p {
-    margin-bottom: 40px;
+.index-why-content p {
+
+    /* luft mellem paragraphs */
+    margin-bottom: clamp(25px, 4vw, 40px);
 }
 
-.why-us-content strong {
+.index-why-content strong {
 
     font-weight: 700;
 }
 
 
 /* ==========================================
-   HØJRE SIDE
+   IMAGE
 ========================================== */
 
-.why-us-image img {
+.index-why-image img {
 
-    /* jeg giver billedet en fast størrelse */
-    width: 520px;
+    /* billedet fylder containeren */
+    width: 100%;
+
+    /* men stopper ved designets størrelse */
+    max-width: 520px;
 
     border-radius: 15px;
 
@@ -1088,224 +1218,168 @@ h3{
 
 
 
-
-
-
-
-
-
-
-
 /* ==========================================
-   ANMELDELSER
+   REVIEWS
 ========================================== */
 
-.reviews-section {
+.index-reviews-section {
 
-    /* jeg bruger samme grønne baggrund som de andre sektioner */
-    background-color: #C8D3BC;
+    /* grøn baggrund */
+    background-color: var(--section-color);
 
-    /* jeg giver sektionen samme afstand som resten af hjemmesiden */
-    padding: 100px;
-    margin-bottom: 200px;
+    /* responsiv spacing */
+    padding:
+            clamp(80px, 10vw, 100px)
+            clamp(20px, 6vw, 100px);
+
+    margin-bottom: clamp(100px, 12vw, 200px);
 }
 
 
 /* ==========================================
-   OVERSKRIFT
+   HEADING
 ========================================== */
 
-.reviews-section h2 {
+.index-reviews-section h2 {
 
-    /* jeg giver luft under overskriften */
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
 
 /* ==========================================
-   INTROTEKST
+   INTRO
 ========================================== */
 
-.reviews-intro {
+.index-reviews-intro {
 
-    /* jeg begrænser bredden så teksten ikke bliver for lang */
+    /* jeg begrænser læsebredden */
     max-width: 700px;
 
-    /* jeg giver luft ned til anmeldelserne */
-    margin-bottom: 80px;
+    /* luft ned til anmeldelser */
+    margin-bottom: clamp(40px, 8vw, 80px);
 }
 
 
 /* ==========================================
-   ANMELDELSESBILLEDER
+   GALLERY
 ========================================== */
 
-.reviews-gallery {
+.index-reviews-gallery {
 
-    /* jeg placerer billederne på én række */
+    /* billeder ved siden af hinanden */
     display: flex;
 
-    /* jeg fordeler dem jævnt */
-    justify-content: space-between;
+    gap: clamp(20px, 5vw, 120px);
 
-    /* jeg giver afstand mellem billederne */
-    gap: 120px;
-
-    /* jeg giver luft ned til knappen */
-    margin-bottom: 80px;
+    margin-bottom: clamp(40px, 8vw, 80px);
 }
 
-.reviews-gallery img {
+.index-reviews-gallery img {
 
-    /* jeg lader alle billeder fylde lige meget */
+    /* billederne deler pladsen */
     flex: 1;
 
-    /* jeg gør billederne responsive */
     width: 100%;
+
+    border-radius: 20px;
 
     display: block;
 
-    /* jeg runder hjørnerne en smule */
-    border-radius: 20px;
-
-    /* jeg giver en let skygge ligesom Facebook-kort */
+    /* let skygge */
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
 
-/* ==========================================
-   FACEBOOK KNAP
-========================================== */
-
-.reviews-btn {
-
-    /* jeg gør linket til en knap */
-    display: inline-block;
-
-    padding: 22px 40px;
-
-    background-color: #C9895B;
-
-    color: black;
-
-    text-decoration: none;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-size: 24px;
-
-    font-weight: bold;
-
-    border-radius: 30px;
-
-    transition: 0.3s;
-}
-
-
-/* jeg giver knappen en lille hover-effekt */
-
-.reviews-btn:hover {
-
-    transform: translateY(-3px);
-}
-
-
-
-
-
-
-
-
-
-
 
 
 
 /* ==========================================
-   ÅBNINGSTIDER
+   OPENING HOURS
 ========================================== */
 
-.opening-section {
+.index-opening-section {
 
-    /* jeg giver samme afstand som resten af siden */
-    padding: 200px 100px;
+    /* responsiv spacing */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
-    background-color: #F5EFE6;
-
-    /* jeg placerer kort og tekst ved siden af hinanden */
+    /* map og content ved siden af hinanden */
     display: flex;
-
-    justify-content: space-between;
 
     align-items: center;
 
-    gap: 80px;
+    gap: clamp(40px, 6vw, 80px);
 }
 
 
 /* ==========================================
-   GOOGLE MAPS
+   MAP
 ========================================== */
 
-.opening-map {
+.index-opening-map {
+
     flex: 1;
+
+    width: 100%;
 }
 
-.opening-map iframe {
+.index-opening-map iframe {
 
-    /* jeg lader kortet fylde hele bredden af boksen */
+    /* kortet fylder hele containeren */
     width: 100%;
 
-    /* jeg gør kortet 620px højt */
-    height: 620px;
+    /* responsiv højde */
+    height: clamp(350px, 60vw, 620px);
 
-    /* jeg fjerner standardrammen */
     border: none;
 
-    /* jeg giver kortet afrundede hjørner */
     border-radius: 15px;
 
-    /* jeg fjerner luft under iframe */
     display: block;
 }
 
 
 /* ==========================================
-   HØJRE SIDE
+   CONTENT
 ========================================== */
 
-.opening-content {
+.index-opening-content {
 
     flex: 1;
 }
 
-.opening-text {
-    font-size: 20px;
+.index-opening-text {
 
-    margin-bottom: 40px;
+    font-size: clamp(18px, 2vw, 20px);
+
+    margin-bottom: clamp(25px, 4vw, 40px);
 }
 
 
 /* ==========================================
-   ÅBNINGSTIDER
+   OPENING HOURS ROWS
 ========================================== */
 
-.opening-hours {
+.index-opening-hours {
 
-    /* jeg placerer rækkerne under hinanden */
+    /* jeg gør containeren til flex */
     display: flex;
 
+    /* jeg placerer rækkerne under hinanden */
     flex-direction: column;
 
-    gap: 16px;
+    /* responsiv afstand mellem rækkerne */
+    gap: clamp(12px, 2vw, 16px);
 
-    margin-bottom: 30px;
+    /* responsiv luft under opening hours */
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
 
-/* jeg laver én samlet række */
+/* row */
 
-.opening-row {
+.index-opening-row {
 
     display: flex;
 
@@ -1315,39 +1389,35 @@ h3{
 }
 
 
-/* jeg styler venstre halvdel */
+/* day */
 
-.day {
+.index-opening-day {
 
     flex: 1;
 
     background-color: #D9D9D9;
 
-    padding: 22px;
+    padding: clamp(18px, 2vw, 22px);
 
     text-align: center;
 
-    font-family: 'Manrope', sans-serif;
-
-    font-size: 1.4rem;
+    font-size: clamp(16px, 2vw, 22px);
 }
 
 
-/* jeg styler højre halvdel */
+/* time */
 
-.time {
+.index-opening-time {
 
     flex: 1;
 
-    background-color: #BDCCB0;
+    background-color: var(--section-color);
 
-    padding: 22px;
+    padding: clamp(18px, 2vw, 22px);
 
     text-align: center;
 
-    font-family: 'Manrope', sans-serif;
-
-    font-size: 1.4rem;
+    font-size: clamp(16px, 2vw, 22px);
 }
 
 
@@ -1355,8 +1425,10 @@ h3{
    NOTE
 ========================================== */
 
-.opening-note {
-    font-size: 17px;
+.index-opening-note {
+
+    /* jeg gør noten lidt mindre end normal brødtekst */
+    font-size: clamp(15px, 1.2vw, 17px);
 }
 
 
@@ -1372,261 +1444,310 @@ h3{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ==========================================
-   KAMPAGNE SIDE
+   SUNSET NIGHTS SIDE
+========================================== */
+/* ==========================================
+   GLOBALE SECTION STYLES
+========================================== */
+
+
+/* ==========================================
+   GLOBALE SECTION STYLES
+========================================== */
+
+.sunset-section-label {
+
+    /* terracotta label */
+    color: #C9895B;
+
+    /* store bogstaver */
+    text-transform: uppercase;
+
+    font-weight: 700;
+
+    /* lidt tracking gør labels mere elegante */
+    letter-spacing: 1px;
+
+    /* responsiv luft under */
+    margin-bottom: clamp(12px, 2vw, 20px);
+}
+
+
+/* ==========================================
+   HERO
 ========================================== */
 
 /* ==========================================
    HERO
 ========================================== */
 
-.campaign-hero {
+.sunset-hero {
 
+    /* parent til overlay/content */
     position: relative;
 
-    height: 90vh;
+    /* responsiv hero højde */
+    min-height: min(90vh, 700px);
 
+    /* baggrundsbillede */
     background-image: url("kampagne-billeder/kampagnehero.png");
 
     background-size: cover;
+
     background-position: center;
 
-    overflow: hidden;
+    /* jeg centrerer content vertikalt */
+    display: flex;
 
+    align-items: center;
+
+    padding:
+            clamp(120px, 10vw, 180px)
+            clamp(20px, 8vw, 100px);
 }
 
 
-/* MØRKT OVERLAY */
+/* mørkt overlay */
 
-.campaign-overlay {
+.sunset-hero-overlay {
 
     position: absolute;
 
-    inset: 0;
+    inset: 0;       /* overlay fylder hele hero */
 
-    background: rgba(0,0,0,0.35);
+    background-color: rgba(0,0,0,0.35);
 
     z-index: 1;
 }
 
 
-/* TEKST */
+/* hero content */
 
-.campaign-content {
+.sunset-hero-content {
 
-    position: absolute;
-
-    top: 50%;
-    left: 50px;
-
-    transform: translateY(-50%);
+    /* content over overlay */
+    position: relative;
 
     z-index: 2;
 
+    /* begrænser tekstbredden */
     max-width: 650px;
 
     color: white;
 }
 
 
-/* OVERSKRIFT */
+/* hero tekst */
 
-.campaign-content h1 {
-    margin-bottom: 10px;
-
-    color: white;
-}
-
-
-/* UNDEROVERSKRIFT */
-
-.campaign-content h2 {
-    margin-bottom: 70px;
+.sunset-hero-content h1 {
 
     color: white;
 
-    font-weight: normal;
-
-    font-size: 35px;
+    margin-bottom: clamp(15px, 2vw, 20px);
 }
 
+/* stor introtekst */
 
-/* BESKRIVELSE */
+.sunset-hero-lead {
 
-.campaign-content p {
-    margin-bottom: 40px;
+    font-size: clamp(22px, 3vw, 35px);
+
+    line-height: 1.3;
+
+    margin-bottom: clamp(25px, 4vw, 50px);
+
+    color: white;
+
+    font-weight: 500;
+}
+
+/* hero brødtekst */
+
+.sunset-hero-text {
 
     max-width: 500px;
+
+    margin-bottom: clamp(25px, 4vw, 40px);
+
+    color: white;
 }
 
 
-/* KNAPPER */
+/* hero buttons */
 
-.campaign-buttons {
+.sunset-hero-buttons {
 
     display: flex;
 
-    gap: 20px;
-}
+    gap: clamp(12px, 2vw, 20px);
 
-.btn-book,
-.btn-program {
-
-    display: inline-block;
-
-    padding: 18px 40px;
-
-    border-radius: 40px;
-
-    text-decoration: none;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-weight: 600;
-
-    transition: 0.3s;
+    flex-wrap: wrap;
 }
 
 
+/* ==========================================
+   BUTTONS
+========================================== */
 
-/* HVID OUTLINE */
+/* primary */
 
-.btn-book {
+.btn-primary {
 
     background-color: #C9895B;
 
     color: black;
 }
 
-.btn-program {
+.btn-primary:hover {
+
+    transform: translateY(-3px);
+}
+
+
+/* white outline */
+
+.btn-outline-light {
 
     border: 2px solid white;
 
     color: white;
 }
 
-.btn-program:hover {
+.btn-outline-light:hover {
 
-    background: white;
+    background-color: white;
 
     color: black;
 }
 
 
+/* dark outline */
 
+.btn-outline-dark {
 
+    border: 2px solid black;
 
+    color: black;
+}
 
+.btn-outline-dark:hover {
+
+    background-color: black;
+
+    color: white;
+}
 
 
 /* ==========================================
-   HVAD ER SUNSET NIGHTS
+   ABOUT SECTION
 ========================================== */
 
-.sunset-about {
+.sunset-about-section {
 
-    padding: 200px 100px;
+    /* responsiv spacing */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
+    /* tekst og billede ved siden af hinanden */
     display: flex;
 
     align-items: center;
 
-    justify-content: space-between;
-
-    gap: 100px;
-
-    background-color: #F5EFE6;
+    /* responsiv afstand mellem content og billede */
+    gap: clamp(40px, 6vw, 100px);
 }
 
 
-/* VENSTRE SIDE */
+/* tekst */
 
-.sunset-text {
+.sunset-about-content {
 
     flex: 1;
+
+    min-width: 0;
 }
 
-.sunset-text h2 {
+.sunset-about-content p {
 
-    margin-bottom: 40px;
-}
+    /* responsiv luft under tekst */
+    margin-bottom: clamp(25px, 4vw, 40px);
 
-.sunset-text p {
-
-    margin-bottom: 50px;
-
+    /* jeg begrænser læsebredden */
     max-width: 650px;
 }
 
 
-/* INFO-LINJE */
+/* info line */
 
-.sunset-info {
+.sunset-about-info {
 
+    /* ikon og tekst på samme række */
     display: flex;
 
     align-items: center;
 
-    gap: 15px;
+    /* responsiv afstand */
+    gap: clamp(10px, 2vw, 15px);
 
-    margin-bottom: 50px;
+    /* responsiv luft under */
+    margin-bottom: clamp(30px, 5vw, 50px);
 
-    font-weight: 700;
+    flex-wrap: wrap;
 }
 
-.sunset-info i {
+.sunset-about-info i {
 
-    font-size: 28px;
-}
+    /* responsiv ikon størrelse */
+    font-size: clamp(20px, 3vw, 28px);
 
-
-/* KNAP */
-
-.sunset-btn {
-
-    display: inline-block;
-
-    padding: 20px 40px;
-
-    background-color: #C9895B;
-
-    color: black;
-
-    text-decoration: none;
-
-    border-radius: 999px;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.sunset-btn:hover {
-
-    transform: translateY(-3px);
 }
 
 
-/* HØJRE BILLEDE */
+/* billede */
 
-.sunset-image {
+.sunset-about-image {
 
     flex: 1;
+    min-width: 0;
 }
 
-.sunset-image img {
+.sunset-about-image img {
 
+    /* billedet fylder containeren */
     width: 100%;
 
+    /* responsiv afrunding */
+    border-radius: clamp(12px, 2vw, 20px);
+
+    /* fjerner inline whitespace */
     display: block;
-
-    border-radius: 20px;
 }
-
-
-
 
 
 
@@ -1634,129 +1755,141 @@ h3{
    OPLEVELSER
 ========================================== */
 
-.experience-section {
+.sunset-experiences-section {
 
-    padding: 200px 100px;
-
-    background-color: #F5EFE6;
+    /* responsiv spacing */
+    padding:
+            0
+            clamp(20px, 6vw, 100px)
+            clamp(100px, 12vw, 200px);
 }
 
 
-/* lille overskrift */
+/* ==========================================
+   GRID
+========================================== */
 
-.experience-label {
+.sunset-experience-grid {
 
-    color: #C9895B;
+    /* responsivt grid */
+    display: grid;
 
-    text-transform: uppercase;
+    /* automatisk responsive grid:
+   - hvert card må minimum være 180px bredt
+   - cards vokser fleksibelt og fylder resten af pladsen
+   - browseren bestemmer automatisk hvor mange cards
+     der kan være på hver række */
+    grid-template-columns:
+    repeat(auto-fit, minmax(180px, 1fr));
 
-    font-weight: 700;
+    /* responsiv afstand */
+    gap: clamp(20px, 3vw, 30px);
 
-    font-size: 22px;
-
-    margin-bottom: 20px;
+    margin-top: clamp(40px, 5vw, 60px);
 }
 
 
-/* stor overskrift */
+/* ==========================================
+   CARDS
+========================================== */
 
-.experience-section h2 {
+.sunset-experience-card {
 
-    margin-bottom: 80px;
-}
+    /* lys baggrund */
+    background-color: var(--card-color);
 
-
-/* kortene */
-
-.experience-grid {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 30px;
-}
-
-
-/* enkelt kort */
-
-.experience-card {
-
-    background: #F8F6F2;
-
-    border-radius: 20px;
+    /* responsiv afrunding */
+    border-radius: clamp(14px, 2vw, 20px);
 
     overflow: hidden;
 
-    width: 220px;
-
+    /* jeg laver card layout */
     display: flex;
 
     flex-direction: column;
 
-    justify-content: space-between;
-
+    height: 100%;   /* samme højde på alle cards */
 }
 
 
+/* ==========================================
+   CARD CONTENT
+========================================== */
 
+.sunset-experience-card-content {
 
-
-/* indhold */
-
-.card-content {
-
-    padding: 35px 20px 30px;
+    /* responsiv padding */
+    padding:
+            clamp(25px, 4vw, 35px)
+            clamp(15px, 2vw, 20px)
+            clamp(25px, 4vw, 30px);
 
     text-align: center;
 
-    min-height: 320px;
+    /* content fylder resten af card */
+    flex: 1;
+
+    /* fleksibelt layout */
+    display: flex;
+
+    flex-direction: column;
+
+    /* elementerne fordeles i højden */
+    justify-content: space-between;
+
+    align-items: center;
+
+    /* responsiv afstand mellem elementer */
+    gap: clamp(15px, 2vw, 20px);
 }
 
 
-/* ikon */
+/* ==========================================
+   ICONS
+========================================== */
 
-.card-content i {
+.sunset-experience-card-content i {
 
-    font-size: 42px;
+    /* responsiv ikon størrelse */
+    font-size: clamp(28px, 4vw, 42px);
 
-    margin-bottom: 25px;
-
-    color: black;
+    color: #000;
 }
 
 
-/* titel */
+/* ==========================================
+   TITLES
+========================================== */
 
-.card-content h3 {
+.sunset-experience-card-content h3 {
 
-    font-size: 24px;
-
-    margin-bottom: 25px;
-
-    line-height: 1.2;
+    line-height: 1.1;
 }
 
 
-/* tekst */
+/* ==========================================
+   TEXT
+========================================== */
 
-.card-content p {
-
-    font-size: 18px;
+.sunset-experience-card-content p {
 
     line-height: 1.5;
 
-    color: #444;
+    /* bedre læsebredde */
+    max-width: 22ch;
 }
 
 
-/* billede */
+/* ==========================================
+   IMAGES
+========================================== */
 
-.experience-card img {
+.sunset-experience-card img {
 
     width: 100%;
 
-    height: 180px;
+    /* responsiv billedhøjde */
+    height: clamp(140px, 18vw, 180px);
 
     object-fit: cover;
 
@@ -1764,146 +1897,137 @@ h3{
 }
 
 
+/* ==========================================
+   WHY SECTION
+========================================== */
+
+.sunset-why-section {
+
+    /* responsiv spacing */
+    padding:
+            0
+            clamp(20px, 6vw, 100px)
+            clamp(100px, 12vw, 200px);
+}
+
+/* ==========================================
+   SECTION HEADER
+========================================== */
+
+.sunset-section-header {
+
+    /* responsiv luft under overskriften */
+    margin-bottom: clamp(5px, 2vw, 15px);
+}
+
+/* ==========================================
+   TEXT CONTAINER
+========================================== */
+
+.sunset-why-text {
+
+    /* jeg begrænser læsebredden */
+    max-width: 900px;
+}
+
+/* ==========================================
+   PARAGRAPHS
+========================================== */
+
+.sunset-why-text p {
+
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    line-height: 1.7;
+}
+
+
+
+
 
 
 /* ==========================================
-   WHY SECTION - HVORFOR TAGE MED?
-========================================== */
-.why-section {
-    padding: 0 100px;
-    margin-bottom: 200px;
-}
-
-.why-section h2 {
-    margin-bottom: 10px;
-}
-
-.why-section p {
-    margin-bottom: 10px;
-}
-
-
-
-
-
-
-/* ==========================================
-   GALLERI - KOM OG OPLEV STEMNING
+   GALLERY
 ========================================== */
 
-.gallery-section {
+.sunset-gallery-section {
 
-    background-color: #C8D3BC;
+    /* grøn baggrund */
+    background-color: var(--section-color);
 
-    padding: 50px 100px;
+    /* responsiv spacing rundt om sektionen */
+    padding:
+            clamp(60px, 8vw, 100px)
+            clamp(20px, 6vw, 100px);
 
+    /* jeg centrerer tekst og knap */
     text-align: center;
 }
 
+/* ==========================================
+   SECTION HEADER
+========================================== */
 
-/* overskrift */
+.sunset-section-header {
 
-.gallery-section h2 {
-
-    margin-bottom: 80px;
+    /* luft under overskriften */
+    margin-bottom: clamp(20px, 3vw, 30px);
 }
 
 
-/* grid */
+/* ==========================================
+   GRID
+========================================== */
 
-.gallery-grid {
+.sunset-gallery-grid {
 
+    /* jeg begrænser hvor bredt galleriet må blive */
     max-width: 1200px;
 
-    margin: 0 auto 80px;
+    /* jeg centrerer gridet
+       og giver responsiv luft under */
+    margin:
+            0
+            auto
+            clamp(40px, 6vw, 80px);
 
+    /* jeg bruger CSS Grid layout */
     display: grid;
 
+    /* editorial layout:
+       - første kolonne bliver stor
+       - de to andre bliver mindre */
     grid-template-columns: 2fr 1fr 1fr;
 
-    grid-template-rows: 240px 180px;
+    /* responsiv rækkehøjde */
+    grid-template-rows:
+        clamp(180px, 22vw, 240px)
+        clamp(140px, 16vw, 180px);
 
-    gap: 12px;
+    /* responsiv afstand mellem billeder */
+    gap: clamp(8px, 1vw, 12px);
 }
 
 
-/* billeder */
+/* ==========================================
+   IMAGES
+========================================== */
 
-.gallery-grid img {
+.sunset-gallery-grid img {
 
+    /* billederne fylder grid-cellen */
     width: 100%;
 
     height: 100%;
 
+    /* billeder beskæres pænt */
     object-fit: cover;
 
-    border-radius: 12px;
+    /* responsiv afrunding */
+    border-radius: clamp(10px, 1.5vw, 12px);
 
+    /* fjerner whitespace under billeder */
     display: block;
-}
-
-
-/* placeringer */
-
-.gallery-grid img:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-}
-
-.gallery-grid img:nth-child(2) {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.gallery-grid img:nth-child(3) {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.gallery-grid img:nth-child(4) {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.gallery-grid img:nth-child(5) {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.gallery-grid img:nth-child(6) {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-
-/* knap */
-
-.gallery-btn {
-
-    display: inline-block;
-
-    padding: 18px 50px;
-
-    border: 2px solid black;
-
-    border-radius: 999px;
-
-    color: black;
-
-    text-decoration: none;
-
-    font-family: 'Manrope', sans-serif;
-
-    font-size: 24px;
-
-    transition: 0.3s;
-}
-
-.gallery-btn:hover {
-
-    background-color: black;
-
-    color: white;
 }
 
 
@@ -1914,96 +2038,196 @@ h3{
    PRAKTISK INFORMATION
 ========================================== */
 
-.info-section {
+.sunset-practical-section {
 
-    padding: 200px 100px;
+    /* responsiv spacing */
+    padding:
+            clamp(100px, 12vw, 200px)
+            clamp(20px, 6vw, 100px);
 
-    background-color: #F5EFE6;
-
+    /* jeg placerer content og billede ved siden af hinanden */
     display: flex;
 
     justify-content: space-between;
 
+    /* jeg aligner elementerne i toppen */
     align-items: flex-start;
 
-    gap: 80px;
+    /* responsiv afstand mellem kolonner */
+    gap: clamp(40px, 6vw, 80px);
 }
 
 
-/* venstre side */
+/* ==========================================
+   LEFT CONTENT
+========================================== */
 
-.info-content {
+.sunset-practical-content {
 
-    flex: 1;
+    /* content får mere plads end billedet */
+    flex: 1.5;
 }
 
 
-.info-content h2 {
+/* ==========================================
+   GRID
+========================================== */
 
-    margin-bottom: 80px;
-}
+.sunset-practical-grid {
 
-
-/* de 4 informationspunkter */
-
-.info-grid {
-
+    /* jeg placerer cards på række */
     display: flex;
 
-    gap: 60px;
+    /* responsiv afstand mellem cards */
+    gap: clamp(25px, 4vw, 60px);
 
-    flex-wrap: nowrap;
+    /* cards må gerne wrappe */
+    flex-wrap: wrap;
 }
 
 
-/* enkelt punkt */
+/* ==========================================
+   CARDS
+========================================== */
 
-.info-card {
+.sunset-practical-card {
 
-    max-width: 180px;
+    /* card bredde */
+    flex: 1 1 100px;
+
+    /* jeg stacker indholdet */
+    display: flex;
+
+    flex-direction: column;
+
+    gap: clamp(10px, 1.5vw, 16px);
+
+    /* begrænser card bredde */
+    max-width: 150px;
 }
 
 
-.info-card i {
+/* ==========================================
+   ICONS
+========================================== */
 
-    font-size: 42px;
+.sunset-practical-card i {
 
-    margin-bottom: 20px;
+    /* responsiv ikon størrelse */
+    font-size: clamp(30px, 4vw, 42px);
 }
 
 
-.info-card h3 {
 
-    font-size: 32px;
 
-    margin-bottom: 20px;
+/* ==========================================
+   TEXT
+========================================== */
+
+.sunset-practical-card p {
+
+    line-height: 1.6;
+
+    max-width: 22ch;
 }
 
 
-.info-card p {
+/* ==========================================
+   IMAGE
+========================================== */
 
-    font-size: 19px;
+.sunset-practical-image {
 
-    line-height: 1.5;
+    /* fleksibel billedbredde */
+    flex: 0 1 clamp(280px, 40vw, 520px);
 }
 
+/* ==========================================
+   IMAGE
+========================================== */
 
-/* billede */
-
-.info-image {
-
-    flex: 0 0 520px;
-}
-
-
-.info-image img {
+.sunset-practical-image img {
 
     width: 100%;
 
-    border-radius: 20px;
+    /* responsiv afrunding */
+    border-radius: clamp(12px, 2vw, 20px);
 
     display: block;
 }
+
+
+
+
+/* ==========================================
+   CTA SECTION
+========================================== */
+
+.sunset-cta-section {
+
+    /* responsiv spacing */
+    padding:
+            clamp(70px, 8vw, 120px)
+            clamp(20px, 6vw, 100px);
+
+    /* responsiv afstand til footer */
+    margin-bottom: clamp(100px, 12vw, 200px);
+
+    /* background billede */
+    background-image:
+            url("kampagne-billeder/fade.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    /* jeg centrerer content */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.sunset-cta-content h2 {
+
+    color: white;
+
+    /* responsiv afstand til knappen */
+    margin-bottom: clamp(25px, 4vw, 50px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2165,7 +2389,7 @@ h3{
 
     margin-bottom:24px;
 
-    letter-spacing:0,5px;
+    letter-spacing:0.5px;
 
     line-height:2.5;
 }
@@ -2297,166 +2521,118 @@ h3{
     margin:24px auto;
 }
 
-
-
 /* SLIDER WRAPPER */
 
 .slider-wrapper4{
-
-    position:relative;
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:0 60px;
+    position: relative;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 70px;
 }
 
 
 
-/* EVENT GRID / SLIDER */
+/* EVENT GRID */
+
 
 .event-grid{
-
     display:flex;
-
-    gap:24px;
-
+    gap:32px;
     overflow-x:auto;
-
     scroll-behavior:smooth;
-
-    scrollbar-width:none;
 }
 
 .event-grid::-webkit-scrollbar{
-
     display:none;
 }
-
-
 
 /* PIL KNAPPER */
 
 .slider-btn{
-
-    position:absolute;
-
-    top:50%;
-
-    transform:translateY(-50%);
-
-    background:none;
-
-    border:none;
-
-    font-size:40px;
-
-    cursor:pointer;
-
-    z-index:10;
-
-    color:black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 42px;
+    cursor: pointer;
+    z-index: 10;
+    color: black;
 }
 
 .left{
-
-    left:0;
+    left: 10px;
 }
 
 .right{
-
-    right:0;
+    right: 10px;
 }
 
 
 
-/* EVENT CARDS */
+/* CARDS */
 
 .event-card{
-
-    width:240px;
-
-    background:#f5efe6;
-
-    border-radius:10px;
-
-    border:1px solid black;
-
-    overflow:hidden;
-
-    flex-shrink:0;
+    width: 230px;
+    flex-shrink: 0;
+    background: #f5efe6;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 
 
-/* EVENT BILLEDER */
+/* BILLEDER */
 
 .event-card img{
-
-    width:100%;
-
-    height:170px;
-
-    object-fit:cover;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
 }
 
 
 
-/* CARD INDHOLD */
+/* INDHOLD */
 
 .card-content{
-
-    padding:18px;
+    padding: 13px;
 }
 
 
 
-/* BADGES */
+/* BADGE */
 
 .event-badge{
-
-    display:inline-block;
-
-    padding:6px 12px;
-
-    background:#E7E8DA;
-
-    border-radius:5px;
-
-    font-size:10px;
-
-    letter-spacing:1px;
-
-    margin-bottom:16px;
-
-    color:#6E735F;
+    display: inline-block;
+    padding: 6px 12px;
+    background: #E7E8DA;
+    border-radius: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #6E735F;
+    margin-bottom: 14px;
 }
 
 
 
-/* TITLER */
+/* TITEL */
 
 .card-content h4{
-
-    font-size:20px;
-
-    line-height:1.2;
-
-    margin:12px 0;
+    font-size: 22px;
+    line-height: 1.2;
+    margin: 12px 0;
 }
 
 
 
-/* TEKST */
+/* BRØDTEKST */
 
 .card-content p{
-
-    font-size:13px;
-
-    line-height:1.6;
-
-    margin-bottom:16px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 14px;
 }
 
 
@@ -2464,24 +2640,18 @@ h3{
 /* INFO */
 
 .event-meta{
-
-    margin-bottom:18px;
+    margin-bottom: 16px;
 }
 
 .event-meta p{
-
-    font-size:12px;
-
-    margin-bottom:6px;
-
-    color:#4F4F4F;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #4F4F4F;
 }
 
 .event-meta i{
-
-    font-size:12px;
-
-    margin-right:6px;
+    font-size: 12px;
+    margin-right: 6px;
 }
 
 
@@ -2489,22 +2659,14 @@ h3{
 /* KNAP */
 
 .card-content a{
-
-    display:inline-block;
-
-    padding:8px 14px;
-
-    border:1px solid #d3cdc3;
-
-    border-radius:999px;
-
-    text-decoration:none;
-
-    color:#4a4a4a;
-
-    font-size:11px;
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid #d3cdc3;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #4a4a4a;
+    font-size: 12px;
 }
-
 
 /*LILLE GALLERI MED 3 BILLEDER*/
 
@@ -2546,10 +2708,9 @@ h3{
     border-radius:15px;
 }
 
-
-
 /*KLAR TIL NÆSTE OPLEVELSE - SEKTION*/
 /* CTA */
+
 
 .cta-section{
 
@@ -2563,7 +2724,7 @@ h3{
 
 .cta-content h3{
 
-    font-size:50px;
+    font-size:50px; /*KLAR TIL NÆSTE OPLEVELSE TITEL*/
 
     line-height:0.95;
 
@@ -2580,10 +2741,14 @@ h3{
 }
 
 
-
 /* RESPONSIVE */
 
 @media(max-width:1100px){
+
+    .event-grid{
+
+        grid-template-columns:repeat(2,1fr);
+    }
 
     .featured-event{
 
@@ -2614,20 +2779,707 @@ h3{
         font-size:44px;
     }
 
+    .event-grid{
+
+        grid-template-columns:1fr;
+    }
+
     .featured-event,
     .cta-content{
 
         padding:40px 30px;
     }
 
-    .slider-wrapper4{
+}
 
-        padding:0 30px;
-    }
 
-    .event-card{
 
-        width:220px;
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+
+    /* footer baggrund */
+    background-color: var(--header-footer-color);
+
+    /* responsiv spacing */
+    padding:
+            clamp(60px, 8vw, 100px)
+            clamp(20px, 6vw, 100px);
+}
+
+.footer a,
+.footer p {
+
+    /* responsiv footer tekst */
+    font-size: clamp(16px, 1.4vw, 19px);
+}
+
+
+/* ==========================================
+   TOP DEL
+========================================== */
+
+.footer-top {
+
+    /* kolonner ved siden af hinanden */
+    display: flex;
+
+    /* responsiv afstand */
+    gap: clamp(40px, 6vw, 100px);
+
+    /* responsiv luft ned til footer-bottom */
+    margin-bottom: clamp(60px, 8vw, 120px);
+}
+
+.footer-column {
+
+    flex: 1;
+
+    min-width: 0;       /* forhindrer flex overflow og lange ord der ødelægger layout */
+}
+
+.footer-column h3 {
+
+    /* luft under overskrift */
+    margin-bottom: clamp(20px, 3vw, 35px);
+}
+
+
+/* ==========================================
+   ÅBNINGSTIDER
+========================================== */
+
+.footer-hours {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: clamp(12px, 2vw, 20px);
+}
+
+
+/* jeg laver én samlet række */
+
+.footer-row {
+
+    /* dag og tid på samme række */
+    display: flex;
+}
+
+
+
+/* jeg styler venstre halvdel */
+
+.footer-day {
+
+    flex: 2;
+
+    background-color: #D7DEC9;
+
+    padding:
+            clamp(14px, 2vw, 18px)
+            clamp(18px, 3vw, 25px);
+
+    border-radius: 12px 0 0 12px;
+}
+
+
+/* jeg styler højre halvdel */
+
+.footer-time {
+
+    flex: 1;
+
+    background-color: #D9D9D9;
+
+    padding: 18px 25px;
+
+    text-align: center;
+
+    border-radius: 0 12px 12px 0;
 
 }
+
+.footer-note {
+
+    margin-top: 35px;
+
+}
+
+
+/* ==========================================
+   FIND OS
+========================================== */
+
+.footer-contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(15px, 2vw, 20px);
+
+    margin-bottom: clamp(20px, 4vw, 35px);
+}
+
+.footer-contact-item i {
+
+    /* jeg gør ikonerne store ligesom designet */
+    font-size: 2rem;
+
+    width: 40px;
+
+}
+
+.footer-contact-item p {
+
+    line-height: 1.5;
+
+}
+
+.footer-contact-item a {
+
+    /* jeg gør teksten sort */
+    color: black;
+
+    /* jeg fjerner understregning */
+    text-decoration: none;
+}
+
+.footer-contact-item a:hover {
+
+    color: #C9895B;
+}
+
+.social-icons a {
+
+    width: clamp(45px, 6vw, 60px);
+
+    height: clamp(45px, 6vw, 60px);
+}
+
+
+/* ==========================================
+   KNAP
+========================================== */
+
+.footer-btn {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 15px 35px;
+
+    background-color: #C9895B;
+
+    color: black;
+
+    text-decoration: none;
+
+    border-radius: 999px;
+
+    font-family: 'Manrope', sans-serif;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+
+}
+
+.footer-btn:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================
+   LINKS
+========================================== */
+
+.footer-links {
+
+    list-style: none;
+
+    padding: 0;
+
+}
+
+.footer-links li {
+
+    /* responsiv afstand mellem links */
+    margin-bottom: clamp(12px, 2vw, 18px);
+
+}
+
+.footer-links a {
+
+    color: black;
+
+    text-decoration: none;
+
+}
+
+
+/* ==========================================
+   SOCIALE MEDIER
+========================================== */
+
+.social-icons {
+
+    /* jeg placerer ikonerne på række */
+    display: flex;
+
+    /* responsiv afstand mellem ikonerne */
+    gap: clamp(12px, 2vw, 20px);
+
+    /* responsiv luft over ikonerne */
+    margin-top: clamp(25px, 4vw, 40px);
+
+    /* ikonerne må wrappe hvis der ikke er plads */
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+
+    /* responsiv størrelse */
+    width: clamp(45px, 6vw, 60px);
+
+    height: clamp(45px, 6vw, 60px);
+
+    /* cirkel */
+    border-radius: 50%;
+
+    /* border */
+    border: 3px solid black;
+
+    /* jeg centrerer ikonet */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    /* ikonfarve */
+    color: black;
+
+    text-decoration: none;
+
+    /* responsiv ikon størrelse */
+    font-size: clamp(20px, 3vw, 28px);
+
+    /* smooth animation */
+    transition:
+            transform 0.3s ease,
+            background-color 0.3s ease,
+            color 0.3s ease;
+}
+
+.social-icons a:hover {
+
+    /* lille løft */
+    transform: translateY(-3px);
+
+    /* hover baggrund */
+    background-color: #C9895B;
+
+    color: black;
+}
+
+
+/* ==========================================
+   BUND
+========================================== */
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: clamp(10px, 2vw, 25px);
+
+    flex-wrap: wrap;
+
+    border-top: 1px solid rgba(0,0,0,0.15);
+
+    padding-top: clamp(20px, 4vw, 35px);
+
+    font-size: clamp(14px, 1vw, 15px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   HEADER - MOBILE NAVIGATION
+========================================== */
+
+@media (max-width: 950px) {
+
+    /* jeg viser burgeren */
+    .burger {
+
+        display: flex;
+
+        z-index: 1001;
+    }
+
+    /* mobilmenu */
+    .nav-links {
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background-color: #AFC3A2;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 40px 20px;
+
+        gap: 30px;
+
+        display: none;
+
+        z-index: 1000;
+    }
+
+    /* når burgeren trykkes */
+    #menu-toggle:checked ~ .nav-links {
+
+        display: flex;
+    }
+}
+
+
+
+
+
+/* ==========================================
+   INDEX
+========================================== */
+/* ==========================================
+   MOBILE HERO
+========================================== */
+
+@media (max-width: 768px) {
+
+    .index-hero {
+
+        min-height: 70vh;
+    }
+}
+
+/* ==========================================
+   FEATURED EVENT RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-featured-event-section {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .index-featured-event-content {
+
+        max-width: 100%;
+    }
+
+    .index-featured-event-image {
+
+        width: 100%;
+    }
+
+    .index-featured-event-image img {
+
+        max-width: 100%;
+    }
+}
+
+/* ==========================================
+   STORY RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-story-wrapper {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .index-story-content {
+
+        max-width: 100%;
+    }
+
+    .index-story-images {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   GALLERY RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .index-gallery-slider button {
+
+        /* jeg flytter knapperne ind på billedet */
+        width: 50px;
+
+        height: 50px;
+    }
+
+    .index-gallery-prev {
+
+        left: 15px;
+    }
+
+    .index-gallery-next {
+
+        right: 15px;
+    }
+}
+
+/* ==========================================
+   GAMES RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-games-top {
+
+        /* jeg placerer elementerne under hinanden */
+        flex-direction: column;
+    }
+
+    .index-games-image img {
+
+        /* billedet fylder hele bredden */
+        max-width: 100%;
+    }
+}
+
+
+/* ==========================================
+   OPENING RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-opening-section {
+
+        /* content og map stacker */
+        flex-direction: column;
+    }
+
+    .index-opening-map iframe {
+
+        min-height: 450px;
+    }
+}
+
+
+/* ==========================================
+   WHY RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-why-section {
+
+        /* jeg placerer elementerne under hinanden */
+        flex-direction: column;
+    }
+
+    .index-why-content {
+
+        max-width: 100%;
+    }
+}
+
+
+/* ==========================================
+   REVIEWS RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .index-reviews-gallery {
+
+        /* billederne stacker */
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+/* ==========================================
+   KAMPAGNE SIDE - SUNSET NIGHT
+========================================== */
+
+/* ==========================================
+   ABOUT RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sunset-about-section {
+
+        /* elementerne stacker */
+        flex-direction: column;
+    }
+
+    .sunset-about-content,
+    .sunset-about-image {
+
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   TABLET GALLERY
+========================================== */
+
+@media (max-width: 900px) {
+
+    .sunset-gallery-grid {
+
+        /* jeg laver 2 lige store kolonner */
+        grid-template-columns: 1fr 1fr;
+
+        /* alle billeder får samme responsive højde */
+        grid-template-rows:
+            repeat(3, clamp(180px, 28vw, 240px));
+    }
+}
+
+
+/* ==========================================
+   MOBILE GALLERY
+========================================== */
+
+@media (max-width: 600px) {
+
+    .sunset-gallery-grid {
+
+        /* billederne stacker i 1 kolonne */
+        grid-template-columns: 1fr;
+
+        /* automatisk responsive højde */
+        grid-template-rows:
+            repeat(6, clamp(220px, 55vw, 320px));
+    }
+}
+
+/* ==========================================
+   TABLET PRAKTISK INFORMATION
+========================================== */
+
+@media (max-width: 800px) {
+
+    .sunset-practical-section {
+
+        /* jeg stacker content og billede */
+        flex-direction: column;
+    }
+
+    .sunset-practical-image {
+
+        /* billedet fylder hele bredden */
+        width: 100%;
+    }
+}
+
+
+
+
+
+/* ==========================================
+   FOOTER RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .footer-top {
+
+        /* kolonnerne stacker */
+        flex-direction: column;
+    }
+
+    .footer-column {
+
+        width: 100%;
+    }
+}
+
+
+
+
+

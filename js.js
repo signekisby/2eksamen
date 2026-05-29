@@ -66,8 +66,8 @@ let currentIndex = 0;
 
 /* jeg finder billedet og pilene i HTML */
 const image = document.getElementById("slider-image");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".index-gallery-prev");
+const nextBtn = document.querySelector(".index-gallery-next");
 
 
 /* jeg laver en funktion som viser billedet,
@@ -121,36 +121,45 @@ showImage();
 
 
 
-/*slider med 4 billeder på arrangement siden*/
+/* ==========================================
+   DARK MODE TOGGLE
+========================================== */
 
-const slider = document.querySelector('.event-grid');
+const themeToggle =
+    document.getElementById("theme-toggle");
 
-const leftBtn = document.querySelector('.left');
+themeToggle.addEventListener("click", () => {
 
-const rightBtn = document.querySelector('.right');
+    const currentTheme =
+        document.documentElement.getAttribute("data-theme");
 
+    if (currentTheme === "dark") {
 
+        document.documentElement.setAttribute(
+            "data-theme",
+            "light"
+        );
 
-rightBtn.addEventListener('click', () => {
+    } else {
 
-    slider.scrollBy({
-
-        left:300,
-
-        behavior:'smooth'
-    });
-
+        document.documentElement.setAttribute(
+            "data-theme",
+            "dark"
+        );
+    }
 });
 
 
 
-leftBtn.addEventListener('click', () => {
 
-    slider.scrollBy({
 
-        left:-300,
 
-        behavior:'smooth'
-    });
 
-});
+
+
+
+
+
+
+
+
